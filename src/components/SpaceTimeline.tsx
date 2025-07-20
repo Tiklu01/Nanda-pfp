@@ -5,6 +5,17 @@ export default function SpaceTimeline() {
   const timelineEvents = [
     {
       year: "2025",
+      title: "MSME Hackathon 4.0 Winner",
+      company: "MSME",
+      location: "Remote",
+      description:
+        "Won MSME hackathon 4.0 securing ₹5L funding from the Govt. to make a prototype.",
+      image: "/msme.JPG",
+      type: "achievement",
+      color: "bg-blue-300",
+    },
+    {
+      year: "2025",
       title: "HexaFalls Hackathon",
       company: "JIS",
       location: "JIS University, Kolkata",
@@ -36,17 +47,17 @@ export default function SpaceTimeline() {
       type: "education",
       color: "bg-green-300",
     },
-    {
-      year: "2020",
-      title: "React Specialist",
-      company: "Digital Agency",
-      location: "Los Angeles, CA",
-      description:
-        "Specialized in React.js development, creating modern and responsive user interfaces for various clients.",
-      image: "https://images.pexels.com/photos/2148222/pexels-photo-2148222.jpeg?auto=compress&cs=tinysrgb&w=600",
-      type: "work",
-      color: "bg-pink-300",
-    },
+    // {
+    //   year: "2020",
+    //   title: "React Specialist",
+    //   company: "Digital Agency",
+    //   location: "Los Angeles, CA",
+    //   description:
+    //     "Specialized in React.js development, creating modern and responsive user interfaces for various clients.",
+    //   image: "https://images.pexels.com/photos/2148222/pexels-photo-2148222.jpeg?auto=compress&cs=tinysrgb&w=600",
+    //   type: "work",
+    //   color: "bg-pink-300",
+    // },
     {
       year: "2022",
       title: "Computer Science Student",
