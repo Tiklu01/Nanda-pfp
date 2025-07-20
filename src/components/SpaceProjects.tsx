@@ -93,8 +93,8 @@ export default function SpaceProjects() {
                   <video 
                     src={project.video} 
                     autoPlay 
-                    muted 
                     loop 
+                    controls
                     className="w-full h-full object-cover"
                   />
                 ) : (
