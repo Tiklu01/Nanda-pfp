@@ -37,9 +37,7 @@ export default function SpaceAbout() {
             </h2>
             <div className="bg-white border-4 border-black p-6 md:p-8 mb-6 md:mb-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 animate-float-gentle">
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-bold">
-                I'm a passionate developer exploring the infinite possibilities of code! With over 5 years navigating
-                the web development universe, I've discovered amazing technologies and created digital experiences that
-                push boundaries.
+               I&apos;m a full-stack developer who loves building simple, user-friendly web apps. I won the MSME Hackathon 4.0 for creative tech solutions. Beyond code, I enjoy music, gaming, and picking up new skills just for fun.
               </p>
             </div>
             <div className="bg-white border-4 border-black p-6 md:p-8 mb-6 md:mb-8 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl blob-4 animate-float-gentle-delay">
@@ -51,7 +49,7 @@ export default function SpaceAbout() {
             </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4">
-              {["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"].map((tech, index) => (
+              {["NextJs", "TypeScript", "Node.js", "Python", "FastApi", "Docker"].map((tech, index) => (
                 <span
                   key={tech}
                   className={`px-4 md:px-6 py-2 md:py-3 border-4 border-black font-black text-sm md:text-lg uppercase tracking-wider transform hover:scale-110 transition-all blob-${(index % 4) + 1} animate-jiggle tech-bounce-${(index % 3) + 1} ${
