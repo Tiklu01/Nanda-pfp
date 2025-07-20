@@ -12,7 +12,7 @@ export default function SpaceProjects() {
       tags: ['React', 'FastApi', 'MongoDB', 'QuadrantDB', 'LangChain','Langgraph'],
       github: 'https://github.com/johndoe/galactic-ecommerce',
       demo: undefined,
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+      video: 'https://res.cloudinary.com/dwt633pc6/video/upload/v1753042031/WhatsApp_Video_2025-07-13_at_19.17.25_oaaghu.mp4',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
