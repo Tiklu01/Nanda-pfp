@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Github, ExternalLink, Play, Pause } from 'lucide-react';
 
 export default function SpaceProjects() {
@@ -7,12 +7,12 @@ export default function SpaceProjects() {
   const projects = [
     {
       id: 1,
-      title: 'Galactic E-Commerce',
-      description: 'A modern e-commerce platform with advanced features and seamless user experience.',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      title: 'Deductly',
+      description: 'A RAG based Tax saving Agent designed to save maximum taxes.',
+      tags: ['React', 'FastApi', 'MongoDB', 'QuadrantDB', 'LangChain','Langgraph'],
       github: 'https://github.com/johndoe/galactic-ecommerce',
-      demo: 'https://galactic-store.space',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+      // demo: 'https://galactic-store.space',
+      video: 'https://player.cloudinary.com/embed/?cloud_name=dwt633pc6&public_id=WhatsApp_Video_2025-07-13_at_19.17.25_oaaghu&profile=cld-default',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
@@ -32,7 +32,7 @@ export default function SpaceProjects() {
       tags: ['Vue.js', 'Chart.js', 'OpenWeather API'],
       github: 'https://github.com/johndoe/cosmic-weather',
       demo: 'https://cosmic-weather.space',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      video: 'https://player.cloudinary.com/embed/?cloud_name=dwt633pc6&public_id=WhatsApp_Video_2025-07-13_at_19.17.25_oaaghu&profile=cld-default',
       image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
