@@ -3,6 +3,7 @@ import { Github, ExternalLink, Play, Pause } from 'lucide-react';
 
 export default function SpaceProjects() {
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  const [videoPaused, setVideoPaused] = useState<{ [key: number]: boolean }>({});
   
   const projects = [
     {
@@ -47,8 +48,22 @@ export default function SpaceProjects() {
     }
   ];
 
-  const toggleVideo = (projectId: number) => {
-    setPlayingVideo(playingVideo === projectId ? null : projectId);
+  const toggleVideo = (projectId: number, event: React.MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    
+    if (playingVideo === projectId) {
+      setPlayingVideo(null);
+      setVideoPaused(prev => ({ ...prev, [projectId]: true }));
+    } else {
+      setPlayingVideo(projectId);
+      setVideoPaused(prev => ({ ...prev, [projectId]: false }));
+    }
+  };
+
+  const handleVideoClick = (event: React.MouseEvent) => {
+    // Prevent the overlay from showing when clicking on video controls
+    event.stopPropagation();
   };
 
   return (
@@ -96,6 +111,7 @@ export default function SpaceProjects() {
                     loop 
                     controls
                     className="w-full h-full object-cover"
+                    onClick={handleVideoClick}
                   />
                 ) : (
                   <img 
@@ -105,12 +121,17 @@ export default function SpaceProjects() {
                   />
                 )}
                 
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <div 
+                  className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                  style={{ 
+                    pointerEvents: playingVideo === project.id ? 'none' : 'auto'
+                  }}
+                >
                   <button 
-                    onClick={() => toggleVideo(project.id)}
+                    onClick={(e) => toggleVideo(project.id, e)}
                     className="bg-white p-6 border-4 border-black hover:bg-yellow-300 transition-colors transform hover:scale-110"
                   >
-                    {playingVideo === project.id ? 
+                    {playingVideo === project.id && !videoPaused[project.id] ? 
                       <Pause className="w-8 h-8 text-black" /> : 
                       <Play className="w-8 h-8 text-black" />
                     }
