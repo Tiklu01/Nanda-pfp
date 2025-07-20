@@ -21,7 +21,7 @@ export default function SpaceTimeline() {
       location: "IEM Ashram, Kolkata",
       description:
         "Won one of the Tracks in Hack{O}Lution Hackathon, creating a RAG pipeline AI agent for tax savings.",
-      image: "https://images.pexels.com/photos/2156/sky-earth-space-working.jpg?auto=compress&cs=tinysrgb&w=600",
+      image: "/hackolution.jpg",
       type: "achievement",
       color: "bg-yellow-300",
     },
@@ -32,7 +32,7 @@ export default function SpaceTimeline() {
       location: "GNIT, Kolkata",
       description:
         "Revived the B2B tech community at GNIT, organizing events and workshops to foster learning and collaboration.",
-      image: "/b2b.jpg",
+      image: "/b2b.JPG",
       type: "education",
       color: "bg-green-300",
     },
