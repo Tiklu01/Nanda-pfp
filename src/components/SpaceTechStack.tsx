@@ -123,8 +123,16 @@ export default function TechStack() {
                           alt={`${tech.name} icon`}
                           className="w-full h-full object-contain"
                           onError={(e) => {
-                            // Fallback to a working placeholder
-                            e.currentTarget.src = `https://via.placeholder.com/32x32/6366f1/ffffff?text=${tech.name.charAt(0)}`
+                            // Prevent infinite loop by only setting fallback once
+                            if (!e.currentTarget.dataset.fallback) {
+                              e.currentTarget.dataset.fallback = 'true';
+                              e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
+                                <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                                  <rect width="32" height="32" fill="#6366f1"/>
+                                  <text x="16" y="20" font-family="Arial" font-size="16" fill="white" text-anchor="middle">${tech.name.charAt(0)}</text>
+                                </svg>
+                              `)}`;
+                            }
                           }}
                         />
                       </div>
