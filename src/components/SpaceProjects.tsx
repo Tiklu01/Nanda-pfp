@@ -11,8 +11,8 @@ export default function SpaceProjects() {
       description: 'A RAG based Tax saving Agent designed to save maximum taxes.',
       tags: ['React', 'FastApi', 'MongoDB', 'QuadrantDB', 'LangChain','Langgraph'],
       github: 'https://github.com/johndoe/galactic-ecommerce',
-      // demo: 'https://galactic-store.space',
-      video: 'https://player.cloudinary.com/embed/?cloud_name=dwt633pc6&public_id=WhatsApp_Video_2025-07-13_at_19.17.25_oaaghu&profile=cld-default',
+      demo: undefined,
+      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
@@ -32,7 +32,7 @@ export default function SpaceProjects() {
       tags: ['Vue.js', 'Chart.js', 'OpenWeather API'],
       github: 'https://github.com/johndoe/cosmic-weather',
       demo: 'https://cosmic-weather.space',
-      video: 'https://player.cloudinary.com/embed/?cloud_name=dwt633pc6&public_id=WhatsApp_Video_2025-07-13_at_19.17.25_oaaghu&profile=cld-default',
+      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
       image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
@@ -151,15 +151,17 @@ export default function SpaceProjects() {
                     <Github className="w-5 h-5" />
                     CODE
                   </a>
-                  <a 
-                    href={project.demo} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-yellow-300 text-black font-black uppercase tracking-wider hover:bg-yellow-400 transition-all transform hover:scale-105 hover:-rotate-2 border-4 border-black"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    DEMO
-                  </a>
+                  {project.demo && (
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 bg-yellow-300 text-black font-black uppercase tracking-wider hover:bg-yellow-400 transition-all transform hover:scale-105 hover:-rotate-2 border-4 border-black"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      DEMO
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
