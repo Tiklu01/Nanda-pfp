@@ -14,11 +14,11 @@ export default function SpaceProjects() {
       github: 'https://github.com/johndoe/galactic-ecommerce',
       demo: undefined,
       video: 'https://res.cloudinary.com/dwt633pc6/video/upload/v1753042031/WhatsApp_Video_2025-07-13_at_19.17.25_oaaghu.mp4',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://res.cloudinary.com/dwt633pc6/image/upload/v1753042668/efea7adf-9e52-4d06-8976-1f14c26fc9df.png'
     },
     {
       id: 2,
-      title: 'Mission Control Dashboard',
+      title: 'Event Planner 360',
       description: 'Real-time project management tool with collaborative features and analytics.',
       tags: ['React', 'TypeScript', 'Socket.io', 'PostgreSQL'],
       github: 'https://github.com/johndoe/mission-control',
