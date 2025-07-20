@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 export default function SpaceContact() {
   return (
@@ -62,7 +62,7 @@ export default function SpaceContact() {
                 </div>
                 <div>
                   <p className="font-black text-black text-xl">Quantum Phone</p>
-                  <p className="text-gray-700 font-bold">+91 (7044) 992-445</p>
+                  <p className="text-gray-700 font-bold">Ain&apos;t Giving 🙂‍↔️</p>
                 </div>
               </div>
 
@@ -86,9 +86,9 @@ export default function SpaceContact() {
                 <a href="https://www.linkedin.com/in/nanda-das-7b2242243/" className="w-16 h-16 bg-blue-600 border-4 border-blue-300 flex items-center justify-center hover:bg-blue-700 transition-all transform hover:scale-125 hover:rotate-12">
                   <Linkedin className="w-8 h-8 text-white" />
                 </a>
-                <a href="#" className="w-16 h-16 bg-cyan-500 border-4 border-cyan-300 flex items-center justify-center hover:bg-cyan-600 transition-all transform hover:scale-125 hover:rotate-12">
+                {/* <a href="#" className="w-16 h-16 bg-cyan-500 border-4 border-cyan-300 flex items-center justify-center hover:bg-cyan-600 transition-all transform hover:scale-125 hover:rotate-12">
                   <Twitter className="w-8 h-8 text-white" />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

@@ -11,41 +11,61 @@ export default function SpaceProjects() {
       title: 'Deductly',
       description: 'A RAG based Tax saving Agent designed to save maximum taxes.',
       tags: ['React', 'FastApi', 'MongoDB', 'QuadrantDB', 'LangChain','Langgraph'],
-      github: 'https://github.com/johndoe/galactic-ecommerce',
+      github: 'https://github.com/Tiklu01/Deductly',
       demo: undefined,
       video: 'https://res.cloudinary.com/dwt633pc6/video/upload/v1753042031/WhatsApp_Video_2025-07-13_at_19.17.25_oaaghu.mp4',
       image: 'https://res.cloudinary.com/dwt633pc6/image/upload/v1753042668/efea7adf-9e52-4d06-8976-1f14c26fc9df.png'
     },
     {
       id: 2,
-      title: 'Event Planner 360',
-      description: 'Real-time project management tool with collaborative features and analytics.',
-      tags: ['React', 'TypeScript', 'Socket.io', 'PostgreSQL'],
-      github: 'https://github.com/johndoe/mission-control',
-      demo: 'https://mission-control.space',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-      image: 'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=800'
+      title: 'FitCircuit',
+      description: 'FitCircuit, an innovative platform, revolutionizes fitness and nutrition with AI-driven personalized workout plans, tailored meal plans, and real-time nutritional insights.',
+      tags: ['NextJs', 'TypeScript','Chart.js', 'MongoDB', 'Tailwind CSS', 'Gemini',"Mystral","OpenAI"],
+      github: 'https://github.com/Tiklu01/FitCircuit',
+      demo: 'https://fitcircuit.onrender.com/',
+      video: 'https://res.cloudinary.com/dwt633pc6/video/upload/v1753043906/My_Movie_srxcef.mp4',
+      image: 'https://res.cloudinary.com/dwt633pc6/image/upload/v1753044010/Screenshot_2025-02-23_at_1.12.10_PM_ongwxq.png'
     },
     {
       id: 3,
-      title: 'Cosmic Weather Station',
-      description: 'Beautiful weather application with data visualization and forecasting.',
-      tags: ['Vue.js', 'Chart.js', 'OpenWeather API'],
-      github: 'https://github.com/johndoe/cosmic-weather',
-      demo: 'https://cosmic-weather.space',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800'
+      title: 'Event Planner 360',
+      description: 'An event management tool that provides CRUD operations and seamless integration with Stripe payment gateway.',
+      tags: ['NextJs', 'Stripe', 'MongoDB', 'Tailwind CSS', 'TypeScript'],
+      github: 'https://github.com/Tiklu01/CBTC',
+      demo: 'https://eventplanner360.vercel.app/',
+      video: "https://res.cloudinary.com/dwt633pc6/video/upload/v1753045495/1714494833485_rcbxup.mp4",
+      image: 'https://res.cloudinary.com/dwt633pc6/image/upload/v1753043193/eventplanner360_urxtgb.png'
     },
     {
       id: 4,
-      title: 'Social Analytics Platform',
-      description: 'Analytics dashboard for social media performance tracking and insights.',
-      tags: ['Next.js', 'D3.js', 'Python', 'FastAPI'],
-      github: 'https://github.com/johndoe/social-analytics',
-      demo: 'https://analytics-demo.space',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800'
+      title: 'TechVerse 3.0',
+      description: "Website for GNIT's Annual Technical Fest with Registration and Admin Dashboard capabilities.",
+      tags: ['Next.js', 'R3F', 'Three.js', 'Tailwind CSS', 'TypeScript'],
+      github: 'https://github.com/Tiklu01/Techverse3.0',
+      demo: 'https://techverse-v3.vercel.app',
+      video: 'https://res.cloudinary.com/dwt633pc6/video/upload/v1753043254/tv3_qd7pjt.mp4',
+      image: 'https://res.cloudinary.com/dwt633pc6/image/upload/v1753045805/69ce8456-4fe3-4675-969b-a974a87271fc.png'
+    },
+    {
+      id: 5,
+      title: 'Car Price Regression Model',
+      description: 'A custom made Regression model from scratch (gradient descent, normalization) for Learning purposes.',
+      tags: ['Python', 'Machine Learning', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'jiupyter Notebook'],
+      github: 'https://github.com/Tiklu01/carPricePredictionLinearRegression',
+      demo: undefined,
+      video: 'https://res.cloudinary.com/dwt633pc6/video/upload/v1753046368/1723813784909_icvsbk.mp4',
+      image: 'https://res.cloudinary.com/dwt633pc6/image/upload/v1753046576/ml_j5kzk7.png'
+    },{
+      id: 6,
+      title: '3D shirt Customizer',
+      description: "A 3D shirt customizer made with OpenAI's DALL-E  and Three.js, allowing users to design and visualize custom shirts in real-time.",
+      tags: ['R3F', 'Three.js', 'DALL-E', 'javaScript'],
+      github: 'https://github.com/Tiklu01/Shirt-Customizer',
+      demo: undefined,
+      video: 'https://res.cloudinary.com/dwt633pc6/video/upload/v1753045663/1698475698990_j1abbh.mp4',
+      image: 'https://res.cloudinary.com/dwt633pc6/image/upload/v1753046793/shirt_nmapst.png'
     }
+    
   ];
 
   const toggleVideo = (projectId: number, event: React.MouseEvent) => {
