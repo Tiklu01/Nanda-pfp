@@ -109,7 +109,7 @@ export default function SpaceProjects() {
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-funky text-7xl text-black mb-8 transform -rotate-1 text-shadow-fun">
+          <h2 className="font-funky text-7xl text-black mb-8 transform -rotate-1 text-shadow-fun font-black">
             SPACE MISSIONS
           </h2>
           <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">

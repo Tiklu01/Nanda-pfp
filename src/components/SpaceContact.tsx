@@ -1,6 +1,47 @@
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { useState } from 'react';
 
 export default function SpaceContact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-cyan-100 to-blue-100 relative overflow-hidden">
       {/* Floating planet */}
@@ -26,7 +67,7 @@ export default function SpaceContact() {
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-funky text-7xl text-black mb-8 transform rotate-1 text-shadow-fun">
+          <h2 className="font-funky text-7xl text-black mb-8 transform rotate-1 text-shadow-fun font-black">
             MISSION CONTROL
           </h2>
           <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
@@ -96,26 +137,22 @@ export default function SpaceContact() {
           {/* Contact Form */}
           <div className="bg-white border-4 border-black p-8 transform rotate-2 hover:rotate-0 transition-transform shadow-xl">
             <div className="text-center mb-8">
-              <h4 className="font-funky text-4xl text-black mb-4 transform -rotate-1">
+              <h4 className="font-funky text-4xl text-black mb-4 transform -rotate-1 font-black">
                 Send Transmission
               </h4>
               <p className="text-gray-700 font-bold">Launch your message into the digital cosmos!</p>
             </div>
 
             <form 
-              action="https://formsubmit.co/nandadas0123@gmail.com"
-              method="POST"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
-
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">First Name</label>
                   <input 
                     type="text" 
-                    name="First Name"
+                    name="firstName"
                     required
                     className="w-full px-6 py-4 border-4 border-black focus:outline-none font-bold text-lg"
                     placeholder="Space Explorer"
@@ -125,7 +162,7 @@ export default function SpaceContact() {
                   <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">Last Name</label>
                   <input 
                     type="text" 
-                    name="Last Name"
+                    name="lastName"
                     required
                     className="w-full px-6 py-4 border-4 border-black focus:outline-none font-bold text-lg"
                     placeholder="Commander"
@@ -148,7 +185,7 @@ export default function SpaceContact() {
                 <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">Mission Type</label>
                 <input 
                   type="text" 
-                  name="Subject"
+                  name="subject"
                   className="w-full px-6 py-4 border-4 border-black focus:outline-none font-bold text-lg"
                   placeholder="Epic Space Collaboration"
                 />
@@ -157,7 +194,7 @@ export default function SpaceContact() {
               <div>
                 <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">Transmission Message</label>
                 <textarea 
-                  name="Message"
+                  name="message"
                   rows={5}
                   required
                   className="w-full px-6 py-4 border-4 border-black focus:outline-none resize-none font-bold text-lg"
@@ -167,11 +204,39 @@ export default function SpaceContact() {
 
               <button 
                 type="submit" 
-                className="w-full bg-black text-white px-8 py-6 font-black text-xl uppercase tracking-wider hover:bg-gray-800 transition-all transform hover:scale-105 hover:rotate-2 flex items-center justify-center gap-3 border-4 border-black shadow-xl btn-funky"
+                disabled={isSubmitting}
+                className={`w-full px-8 py-6 font-black text-xl uppercase tracking-wider transition-all transform hover:scale-105 hover:rotate-2 flex items-center justify-center gap-3 border-4 border-black shadow-xl btn-funky ${
+                  isSubmitting 
+                    ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
+                    : submitStatus === 'success'
+                    ? 'bg-green-600 text-white hover:bg-green-700'
+                    : submitStatus === 'error'
+                    ? 'bg-red-600 text-white hover:bg-red-700'
+                    : 'bg-black text-white hover:bg-gray-800'
+                }`}
               >
                 <Send className="w-6 h-6" />
-                Launch Message! 🚀
+                {isSubmitting 
+                  ? 'Launching...' 
+                  : submitStatus === 'success'
+                  ? 'Message Sent! 🚀'
+                  : submitStatus === 'error'
+                  ? 'Try Again 🔄'
+                  : 'Launch Message! 🚀'
+                }
               </button>
+
+              {submitStatus === 'success' && (
+                <div className="bg-green-100 border-4 border-green-500 p-4 text-center transform rotate-1">
+                  <p className="text-green-800 font-bold">🎉 Your message has been launched successfully!</p>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="bg-red-100 border-4 border-red-500 p-4 text-center transform -rotate-1">
+                  <p className="text-red-800 font-bold">❌ Houston, we have a problem! Please try again.</p>
+                </div>
+              )}
             </form>
           </div>
         </div>

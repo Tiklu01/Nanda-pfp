@@ -114,7 +114,7 @@ export default function SpaceTimeline() {
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="font-funky text-4xl md:text-6xl lg:text-7xl text-black mb-4 md:mb-8 transform rotate-1 text-shadow-fun">
+          <h2 className="font-funky text-4xl md:text-6xl lg:text-7xl text-black mb-4 md:mb-8 transform rotate-1 text-shadow-fun font-black">
             JOURNEY LOG
           </h2>
           <p className="text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto font-bold px-4">
@@ -233,9 +233,13 @@ export default function SpaceTimeline() {
       <style >{`
         .font-funky {
           font-family: 'Comic Sans MS', cursive, sans-serif;
+          font-weight: 900 !important;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
         .text-shadow-fun {
           text-shadow: 3px 3px 0px #000;
+          font-weight: 900 !important;
         }
         .hover-lift:hover {
           transform: translateY(-5px) rotate(0deg);

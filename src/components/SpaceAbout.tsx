@@ -30,7 +30,7 @@ export default function SpaceAbout() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
-            <h2 className="font-funky text-4xl md:text-7xl text-black mb-6 md:mb-8 transform -rotate-2 text-shadow-fun">
+            <h2 className="font-funky text-4xl md:text-7xl text-black mb-6 md:mb-8 transform -rotate-2 text-shadow-fun font-black">
               ABOUT THE
               <br />
               <span className="transform rotate-1 inline-block">EXPLORER</span>
@@ -184,9 +184,13 @@ export default function SpaceAbout() {
       <style>{`
         .font-funky {
           font-family: 'Comic Sans MS', cursive, sans-serif;
+          font-weight: 900 !important;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
         .text-shadow-fun {
           text-shadow: 3px 3px 0px #000;
+          font-weight: 900 !important;
         }
         .blob-1 {
           border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;

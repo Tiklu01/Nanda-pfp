@@ -22,16 +22,16 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
   return (
     <>
       {/* Floating UFO Navigation */}
-      <div className="fixed top-4 md:top-8 left-4 md:left-8 z-50">
+      <div className="fixed top-4 md:top-8 left-2 md:left-4 z-50">
         <div className="relative">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="group relative">
             {/* UFO Body */}
             <div className="relative animate-float">
               <svg
-                width="60"
-                height="40"
+                width="50"
+                height="35"
                 viewBox="0 0 60 40"
-                className="md:w-20 md:h-12"
+                className="md:w-[70px] md:h-[45px]"
                 style={{ filter: "drop-shadow(3px 3px 6px rgba(0,0,0,0.3))" }}
               >
                 {/* UFO Shadow */}
@@ -101,7 +101,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
           {/* Navigation Menu */}
           {isMenuOpen && (
             <div
-              className="absolute top-12 md:top-16 left-0 bg-white border-4 border-black p-4 md:p-6 min-w-[180px] md:min-w-[200px] transform rotate-1 blob-4 animate-wiggle"
+              className="absolute top-10 md:top-14 left-0 bg-white border-4 border-black p-4 md:p-6 min-w-[180px] md:min-w-[200px] transform rotate-1 blob-4 animate-wiggle"
               style={{ boxShadow: "6px 6px 0px rgba(255,107,107,0.4), 12px 12px 0px rgba(255,255,0,0.2)" }}
             >
               <div className="space-y-2 md:space-y-3">
@@ -136,7 +136,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
               className="font-funky text-xl md:text-3xl text-black transform -rotate-2"
               style={{ textShadow: "2px 2px 0px #4ecdc4" }}
             >
-              PORTFOLIO
+              <span className="font-black">PORTFOLIO</span>
             </div>
 
             <div className="hidden lg:flex items-center space-x-6 md:space-x-8">
@@ -159,9 +159,13 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
       <style>{`
         .font-funky {
           font-family: 'Comic Sans MS', cursive, sans-serif;
+          font-weight: 900 !important;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
         .text-shadow-fun {
           text-shadow: 2px 2px 0px #ff6b6b, 4px 4px 0px rgba(255,107,107,0.3);
+          font-weight: 900 !important;
         }
         .blob-1 {
           border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;

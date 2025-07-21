@@ -19,6 +19,9 @@
 @layer utilities {
   .font-funky {
     font-family: 'Fredoka One', cursive;
+    font-weight: 900 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   .animate-float {
@@ -205,6 +208,9 @@
 
 .text-shadow-fun {
   text-shadow: 4px 4px 0px #000, 8px 8px 0px rgba(0,0,0,0.2);
+  font-weight: 900 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Button effects */
@@ -234,50 +240,73 @@
 
 /* Responsive typography */
 @media (max-width: 768px) {
+  .font-funky {
+    font-weight: 900 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .text-shadow-fun {
+    font-weight: 900 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   .text-8xl {
     font-size: 3rem;
+    font-weight: 900 !important;
   }
   
   .text-9xl {
     font-size: 4rem;
+    font-weight: 900 !important;
   }
   
   .text-6xl {
     font-size: 2.5rem;
+    font-weight: 900 !important;
   }
   
   .text-7xl {
     font-size: 3rem;
+    font-weight: 900 !important;
   }
   
   .text-5xl {
     font-size: 2rem;
+    font-weight: 900 !important;
   }
   
   .text-4xl {
     font-size: 1.8rem;
+    font-weight: 900 !important;
   }
   
   .text-3xl {
     font-size: 1.5rem;
+    font-weight: 900 !important;
   }
 }
 
 @media (max-width: 640px) {
   .text-8xl {
     font-size: 2.5rem;
+    font-weight: 900 !important;
   }
   
   .text-9xl {
     font-size: 3rem;
+    font-weight: 900 !important;
   }
   
   .text-6xl {
     font-size: 2rem;
+    font-weight: 900 !important;
   }
   
   .text-7xl {
     font-size: 2.5rem;
+    font-weight: 900 !important;
   }
 }
 
