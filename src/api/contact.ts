@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import nodemailer from 'nodemailer';
 
 export default async function handler(req: any, res: any) {
@@ -14,7 +15,7 @@ export default async function handler(req: any, res: any) {
 
   try {
     // Create transporter
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'gmail', // or your preferred email service
       auth: {
         user: process.env.EMAIL_USER, // Your email
@@ -25,7 +26,7 @@ export default async function handler(req: any, res: any) {
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'nandadas0123@gmail.com', // Your receiving email
+      to: 'tikludas01@gmail.com', // Your receiving email
       subject: `Portfolio Contact: ${subject || 'New Message'}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
