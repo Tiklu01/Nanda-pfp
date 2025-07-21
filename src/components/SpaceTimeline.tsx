@@ -47,17 +47,16 @@ export default function SpaceTimeline() {
       type: "education",
       color: "bg-green-300",
     },
-    // {
-    //   year: "2020",
-    //   title: "React Specialist",
-    //   company: "Digital Agency",
-    //   location: "Los Angeles, CA",
-    //   description:
-    //     "Specialized in React.js development, creating modern and responsive user interfaces for various clients.",
-    //   image: "https://images.pexels.com/photos/2148222/pexels-photo-2148222.jpeg?auto=compress&cs=tinysrgb&w=600",
-    //   type: "work",
-    //   color: "bg-pink-300",
-    // },
+    {
+      year: "2024",
+      title: "Techverse 3.0",
+      company: "GNIT",
+      location: "GNIT, Kolkata",
+      description: "Operated as Tech Lead for GNIT's annual technical fest, overseeing end-to-end tech execution and coordination.",
+      image: "/tv1.JPG",
+      type: "work",
+      color: "bg-pink-300",
+    },
     {
       year: "2022",
       title: "Computer Science Student",
@@ -65,7 +64,7 @@ export default function SpaceTimeline() {
       location: "Kolkata, WB",
       description:
         "Started my journey in computer science & Engineering, learning programming fundamentals and exploring development.",
-      image: "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/NIGHT-VIEW-COLLEG.jpg",
       type: "education",
       color: "bg-purple-300",
     },
