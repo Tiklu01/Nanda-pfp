@@ -84,8 +84,7 @@ export default function SpaceHero() {
 
         <div className="bg-white border-4 border-black p-4 md:p-6 lg:p-8 mb-6 md:mb-8 lg:mb-12 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 max-w-xl md:max-w-2xl mx-4">
           <p className="text-base md:text-lg lg:text-xl text-gray-700 font-bold leading-relaxed">
-            Many people sign up for affiliate programs with the hope of making some serious money. Join me on this
-            cosmic journey through code and creativity!
+            You don&apos;t need a PhD to win in life — just curiosity, code, and a little rebellion. Let&apos;s make the World weird, useful, and maybe even profitable together!
           </p>
         </div>
 

@@ -22,7 +22,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
   return (
     <>
       {/* Floating UFO Navigation */}
-      <div className="fixed top-4 md:top-8 left-2 md:left-4 z-50">
+      <div className="fixed top-4 md:top-8 right-2 md:left-4 z-50">
         <div className="relative">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="group relative">
             {/* UFO Body */}
@@ -34,65 +34,13 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
                 className="md:w-[70px] md:h-[45px]"
                 style={{ filter: "drop-shadow(3px 3px 6px rgba(0,0,0,0.3))" }}
               >
-                {/* UFO Shadow */}
                 <ellipse cx="30" cy="35" rx="25" ry="3" fill="#000" opacity="0.2" />
-
-                {/* UFO Base */}
-                <ellipse
-                  cx="30"
-                  cy="25"
-                  rx="25"
-                  ry="6"
-                  fill="#4ecdc4"
-                  stroke="#000"
-                  strokeWidth="2"
-                  className="blob-1"
-                />
-
-                {/* UFO Top */}
-                <ellipse
-                  cx="30"
-                  cy="18"
-                  rx="15"
-                  ry="8"
-                  fill="#ff6b6b"
-                  stroke="#000"
-                  strokeWidth="2"
-                  className="blob-2"
-                />
-
-                {/* UFO Dome */}
-                <ellipse
-                  cx="30"
-                  cy="15"
-                  rx="10"
-                  ry="6"
-                  fill="#ffff00"
-                  stroke="#000"
-                  strokeWidth="1.5"
-                  className="blob-3"
-                />
-
-                {/* Lights */}
+                <ellipse cx="30" cy="25" rx="25" ry="6" fill="#4ecdc4" stroke="#000" strokeWidth="2" className="blob-1" />
+                <ellipse cx="30" cy="18" rx="15" ry="8" fill="#ff6b6b" stroke="#000" strokeWidth="2" className="blob-2" />
+                <ellipse cx="30" cy="15" rx="10" ry="6" fill="#ffff00" stroke="#000" strokeWidth="1.5" className="blob-3" />
                 <circle cx="18" cy="27" r="2" fill="#ffff00" className="animate-pulse-slow" />
-                <circle
-                  cx="30"
-                  cy="29"
-                  r="2"
-                  fill="#ffff00"
-                  className="animate-pulse-slow"
-                  style={{ animationDelay: "0.5s" }}
-                />
-                <circle
-                  cx="42"
-                  cy="27"
-                  r="2"
-                  fill="#ffff00"
-                  className="animate-pulse-slow"
-                  style={{ animationDelay: "1s" }}
-                />
-
-                {/* Beam */}
+                <circle cx="30" cy="29" r="2" fill="#ffff00" className="animate-pulse-slow" style={{ animationDelay: "0.5s" }} />
+                <circle cx="42" cy="27" r="2" fill="#ffff00" className="animate-pulse-slow" style={{ animationDelay: "1s" }} />
                 <polygon points="22,31 38,31 35,40 25,40" fill="#ffff00" opacity="0.3" className="animate-pulse-slow" />
               </svg>
             </div>
@@ -101,7 +49,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
           {/* Navigation Menu */}
           {isMenuOpen && (
             <div
-              className="absolute top-10 md:top-14 left-0 bg-white border-4 border-black p-4 md:p-6 min-w-[180px] md:min-w-[200px] transform rotate-1 blob-4 animate-wiggle"
+              className="absolute top-10 md:top-14 left-1/2 md:left-0 -translate-x-full md:translate-x-0 bg-white border-4 border-black p-4 md:p-6 min-w-[180px] md:min-w-[200px] transform rotate-1 blob-4 animate-wiggle"
               style={{ boxShadow: "6px 6px 0px rgba(255,107,107,0.4), 12px 12px 0px rgba(255,255,0,0.2)" }}
             >
               <div className="space-y-2 md:space-y-3">
@@ -115,7 +63,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
                     className={`block w-full text-left text-sm md:text-lg hover:bg-black hover:text-white px-2 md:px-3 py-1 md:py-2 transition-all transform hover:rotate-1 hover:scale-105 ${
                       activeSection === item.id ? "bg-black text-white" : "text-black hover:bg-gray-800"
                     }`}
-                    style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
+                    style={{ fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
                   >
                     {item.label}
                   </button>
@@ -148,7 +96,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
                   className={`text-sm md:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 ${
                     activeSection === item.id ? "text-black" : "text-gray-600 hover:text-black"
                   }`}
-                  style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
+                  style={{ fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
                 >
                   {item.label}
                 </button>
@@ -158,6 +106,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
         </div>
       </nav>
 
+      {/* Custom styles */}
       <style>{`
         .font-funky {
           font-family: 'Comic Sans MS', cursive, sans-serif;

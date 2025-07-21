@@ -75,8 +75,8 @@ export default function SpaceAbout() {
               <div className="bg-white border-4 border-black p-4 md:p-6 transform rotate-2 hover:rotate-0 transition-transform shadow-xl animate-wiggle-gentle oval-container">
                 <div className="relative overflow-hidden oval-image">
                   <img
-                    src="/Nanda.png"
-                    alt="James Singleton - Space Explorer Developer"
+                    src="https://res.cloudinary.com/dwt633pc6/image/upload/v1753080603/Nanda_h3wkqc.png"
+                    alt="Nanda Lal Das - Space Explorer Developer"
                     className="w-full h-auto transform hover:scale-105 transition-transform duration-300"
                   />
                 </div>
