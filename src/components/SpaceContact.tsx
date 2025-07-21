@@ -11,33 +11,41 @@ export default function SpaceContact() {
     setSubmitStatus('idle');
 
     const formData = new FormData(e.currentTarget);
-    const data = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-    };
+    const firstName = formData.get('firstName') as string;
+    const lastName = formData.get('lastName') as string;
+    const email = formData.get('email') as string;
+    const subject = formData.get('subject') as string;
+    const message = formData.get('message') as string;
+
+    // Create mailto link with form data
+    const mailtoSubject = encodeURIComponent(`Portfolio Contact: ${subject || 'New Message'}`);
+    const mailtoBody = encodeURIComponent(`
+Name: ${firstName} ${lastName}
+Email: ${email}
+Subject: ${subject || 'No subject provided'}
+
+Message:
+${message}
+
+---
+This message was sent from your portfolio contact form.
+    `);
+
+    const mailtoLink = `mailto:tikludas01@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
+      // Open default email client
+      window.location.href = mailtoLink;
+      
+      // Simulate success after a short delay
+      setTimeout(() => {
         setSubmitStatus('success');
         (e.target as HTMLFormElement).reset();
-      } else {
-        setSubmitStatus('error');
-      }
+        setIsSubmitting(false);
+      }, 1000);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error opening email client:', error);
       setSubmitStatus('error');
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -229,13 +237,13 @@ export default function SpaceContact() {
 
               {submitStatus === 'success' && (
                 <div className="bg-green-100 border-4 border-green-500 p-4 text-center transform rotate-1">
-                  <p className="text-green-800 font-bold">🎉 Your message has been launched successfully!</p>
+                  <p className="text-green-800 font-bold">🎉 Email client opened! Please send the message from your email app.</p>
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="bg-red-100 border-4 border-red-500 p-4 text-center transform -rotate-1">
-                  <p className="text-red-800 font-bold">❌ Houston, we have a problem! Please try again.</p>
+                  <p className="text-red-800 font-bold">❌ Houston, we have a problem! Please email directly: tikludas01@gmail.com</p>
                 </div>
               )}
             </form>
