@@ -114,7 +114,7 @@ export default function SpaceTimeline() {
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="font-funky text-4xl md:text-6xl lg:text-7xl text-black mb-4 md:mb-8 transform rotate-1 text-shadow-fun font-black">
+          <h2 className="font-funky text-4xl md:text-6xl lg:text-7xl text-black mb-4 md:mb-8 transform rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             JOURNEY LOG
           </h2>
           <p className="text-lg md:text-2xl text-gray-700 max-w-3xl mx-auto font-bold px-4">
@@ -165,7 +165,7 @@ export default function SpaceTimeline() {
                       </div>
                     </div>
 
-                    <h3 className="font-funky text-2xl text-black mb-2 transform rotate-1">{event.title}</h3>
+                    <h3 className="font-funky text-xl md:text-2xl text-black mb-2 transform rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>{event.title}</h3>
                     <p className="text-black font-black text-lg mb-2">{event.company}</p>
                     <p className="text-gray-600 text-sm mb-3 flex items-center gap-2 font-bold">
                       <MapPin className="w-4 h-4" />
@@ -200,7 +200,7 @@ export default function SpaceTimeline() {
                       </div>
                     </div>
 
-                    <h3 className="font-funky text-2xl lg:text-3xl text-black mb-3 transform rotate-1">
+                    <h3 className="font-funky text-xl md:text-2xl lg:text-3xl text-black mb-3 transform rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                       {event.title}
                     </h3>
                     <p className="text-black font-black text-lg lg:text-xl mb-2">{event.company}</p>

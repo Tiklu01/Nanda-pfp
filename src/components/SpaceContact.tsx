@@ -67,7 +67,7 @@ export default function SpaceContact() {
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-funky text-7xl text-black mb-8 transform rotate-1 text-shadow-fun font-black">
+          <h2 className="font-funky text-4xl md:text-7xl text-black mb-8 transform rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             MISSION CONTROL
           </h2>
           <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
@@ -79,7 +79,7 @@ export default function SpaceContact() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="bg-white border-4 border-black p-8 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl">
-              <h3 className="font-funky text-4xl text-black mb-6 transform rotate-1">Get In Touch</h3>
+              <h3 className="font-funky text-2xl md:text-4xl text-black mb-6 transform rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Get In Touch</h3>
               <p className="text-xl text-gray-700 mb-8 leading-relaxed font-bold">
                 Whether you have a project in mind, want to collaborate, or just want to say hello, 
                 I'm always open to discussing new opportunities and cosmic adventures!
@@ -119,7 +119,7 @@ export default function SpaceContact() {
             </div>
 
             <div className="bg-white border-4 border-black p-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl">
-              <h4 className="font-funky text-2xl text-black mb-6 transform -rotate-1">Follow My Journey</h4>
+              <h4 className="font-funky text-xl md:text-2xl text-black mb-6 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Follow My Journey</h4>
               <div className="flex gap-4">
                 <a href="https://github.com/tiklu01" className="w-16 h-16 bg-black border-4 border-gray-300 flex items-center justify-center hover:bg-gray-800 transition-all transform hover:scale-125 hover:rotate-12">
                   <Github className="w-8 h-8 text-white" />
@@ -137,7 +137,7 @@ export default function SpaceContact() {
           {/* Contact Form */}
           <div className="bg-white border-4 border-black p-8 transform rotate-2 hover:rotate-0 transition-transform shadow-xl">
             <div className="text-center mb-8">
-              <h4 className="font-funky text-4xl text-black mb-4 transform -rotate-1 font-black">
+              <h4 className="font-funky text-2xl md:text-4xl text-black mb-4 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                 Send Transmission
               </h4>
               <p className="text-gray-700 font-bold">Launch your message into the digital cosmos!</p>
@@ -149,7 +149,7 @@ export default function SpaceContact() {
             >
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">First Name</label>
+                  <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>First Name</label>
                   <input 
                     type="text" 
                     name="firstName"
@@ -159,7 +159,7 @@ export default function SpaceContact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">Last Name</label>
+                  <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Last Name</label>
                   <input 
                     type="text" 
                     name="lastName"
@@ -171,7 +171,7 @@ export default function SpaceContact() {
               </div>
 
               <div>
-                <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">Quantum Email</label>
+                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Quantum Email</label>
                 <input 
                   type="email" 
                   name="email"
@@ -182,7 +182,7 @@ export default function SpaceContact() {
               </div>
 
               <div>
-                <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">Mission Type</label>
+                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Mission Type</label>
                 <input 
                   type="text" 
                   name="subject"
@@ -192,7 +192,7 @@ export default function SpaceContact() {
               </div>
 
               <div>
-                <label className="block text-sm font-black mb-3 text-black uppercase tracking-wider">Transmission Message</label>
+                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Transmission Message</label>
                 <textarea 
                   name="message"
                   rows={5}
@@ -205,7 +205,7 @@ export default function SpaceContact() {
               <button 
                 type="submit" 
                 disabled={isSubmitting}
-                className={`w-full px-8 py-6 font-black text-xl uppercase tracking-wider transition-all transform hover:scale-105 hover:rotate-2 flex items-center justify-center gap-3 border-4 border-black shadow-xl btn-funky ${
+                className={`w-full px-8 py-6 text-xl uppercase tracking-wider transition-all transform hover:scale-105 hover:rotate-2 flex items-center justify-center gap-3 border-4 border-black shadow-xl btn-funky ${
                   isSubmitting 
                     ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
                     : submitStatus === 'success'
@@ -214,6 +214,7 @@ export default function SpaceContact() {
                     ? 'bg-red-600 text-white hover:bg-red-700'
                     : 'bg-black text-white hover:bg-gray-800'
                 }`}
+                style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
               >
                 <Send className="w-6 h-6" />
                 {isSubmitting 

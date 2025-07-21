@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700;800;900&family=Black+Ops+One&family=Bungee&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -18,10 +18,11 @@
 
 @layer utilities {
   .font-funky {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Bungee', 'Black Ops One', 'Arial Black', sans-serif;
     font-weight: 900 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.05em;
   }
   
   .animate-float {

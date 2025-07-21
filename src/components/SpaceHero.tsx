@@ -74,10 +74,10 @@ export default function SpaceHero() {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 py-12 md:py-20 flex flex-col items-center justify-center min-h-screen text-center">
         <div className="mb-8 md:mb-12">
-          <h1 className="font-funky text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black mb-2 md:mb-4 transform -rotate-2 text-shadow-fun blob-1 font-black">
+          <h1 className="font-funky text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black mb-2 md:mb-4 transform -rotate-2 text-shadow-fun blob-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             EXPLORE
           </h1>
-          <h2 className="font-funky text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black transform rotate-1 text-shadow-fun blob-2 font-black">
+          <h2 className="font-funky text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black transform rotate-1 text-shadow-fun blob-2" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             THE SPACE
           </h2>
         </div>
@@ -90,7 +90,7 @@ export default function SpaceHero() {
         </div>
 
         <div className="relative">
-          <button className="bg-black text-white px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 text-base md:text-lg lg:text-xl font-black uppercase tracking-wider hover:bg-gray-800 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black blob-4 font-extrabold">
+          <button className="bg-black text-white px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 text-base md:text-lg lg:text-xl uppercase tracking-wider hover:bg-gray-800 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black blob-4" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             Nanda Lal Das
           </button>
 

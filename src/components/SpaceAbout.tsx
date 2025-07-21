@@ -30,7 +30,7 @@ export default function SpaceAbout() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
-            <h2 className="font-funky text-4xl md:text-7xl text-black mb-6 md:mb-8 transform -rotate-2 text-shadow-fun font-black">
+            <h2 className="font-funky text-4xl md:text-7xl text-black mb-6 md:mb-8 transform -rotate-2 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
               ABOUT THE
               <br />
               <span className="transform rotate-1 inline-block">EXPLORER</span>

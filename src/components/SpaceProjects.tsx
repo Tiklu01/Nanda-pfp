@@ -109,7 +109,7 @@ export default function SpaceProjects() {
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-funky text-7xl text-black mb-8 transform -rotate-1 text-shadow-fun font-black">
+          <h2 className="font-funky text-4xl md:text-7xl text-black mb-8 transform -rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             SPACE MISSIONS
           </h2>
           <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
@@ -160,7 +160,7 @@ export default function SpaceProjects() {
               </div>
               
               <div className="p-8">
-                <h3 className="font-funky text-3xl text-black mb-4 transform -rotate-1">
+                <h3 className="font-funky text-2xl md:text-3xl text-black mb-4 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                   {project.title}
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed font-semibold text-lg">
@@ -187,7 +187,7 @@ export default function SpaceProjects() {
                     href={project.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-black text-white font-black uppercase tracking-wider hover:bg-gray-800 transition-all transform hover:scale-105 hover:rotate-2 border-4 border-black"
+                    className="flex items-center gap-2 px-6 py-3 bg-black text-white uppercase tracking-wider hover:bg-gray-800 transition-all transform hover:scale-105 hover:rotate-2 border-4 border-black" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
                   >
                     <Github className="w-5 h-5" />
                     CODE
@@ -197,7 +197,7 @@ export default function SpaceProjects() {
                       href={project.demo} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 bg-yellow-300 text-black font-black uppercase tracking-wider hover:bg-yellow-400 transition-all transform hover:scale-105 hover:-rotate-2 border-4 border-black"
+                      className="flex items-center gap-2 px-6 py-3 bg-yellow-300 text-black uppercase tracking-wider hover:bg-yellow-400 transition-all transform hover:scale-105 hover:-rotate-2 border-4 border-black" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
                     >
                       <ExternalLink className="w-5 h-5" />
                       DEMO

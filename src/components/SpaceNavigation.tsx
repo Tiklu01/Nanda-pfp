@@ -112,9 +112,10 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
                       onSectionChange(item.id)
                       setIsMenuOpen(false)
                     }}
-                    className={`block w-full text-left font-black text-sm md:text-lg hover:bg-black hover:text-white px-2 md:px-3 py-1 md:py-2 transition-all transform hover:rotate-1 hover:scale-105 ${
+                    className={`block w-full text-left text-sm md:text-lg hover:bg-black hover:text-white px-2 md:px-3 py-1 md:py-2 transition-all transform hover:rotate-1 hover:scale-105 ${
                       activeSection === item.id ? "bg-black text-white" : "text-black hover:bg-gray-800"
                     }`}
+                    style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
                   >
                     {item.label}
                   </button>
@@ -134,9 +135,9 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
           <div className="flex items-center justify-between h-16 md:h-20">
             <div
               className="font-funky text-xl md:text-3xl text-black transform -rotate-2"
-              style={{ textShadow: "2px 2px 0px #4ecdc4" }}
+              style={{ textShadow: "2px 2px 0px #4ecdc4", fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
             >
-              <span className="font-black">PORTFOLIO</span>
+              <span>PORTFOLIO</span>
             </div>
 
             <div className="hidden lg:flex items-center space-x-6 md:space-x-8">
@@ -144,9 +145,10 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
                 <button
                   key={item.id}
                   onClick={() => onSectionChange(item.id)}
-                  className={`font-black text-sm md:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 ${
+                  className={`text-sm md:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 ${
                     activeSection === item.id ? "text-black" : "text-gray-600 hover:text-black"
                   }`}
+                  style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
                 >
                   {item.label}
                 </button>
