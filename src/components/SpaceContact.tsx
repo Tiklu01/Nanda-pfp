@@ -1,31 +1,155 @@
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface FormErrors {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+}
+
 export default function SpaceContact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState<FormData>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<{ [key: string]: boolean }>({});
+
+  // Email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Real-time validation
+  const validateField = (name: string, value: string): string | undefined => {
+    switch (name) {
+      case 'firstName':
+        if (!value.trim()) return 'First name is required';
+        if (value.trim().length < 2) return 'First name must be at least 2 characters';
+        if (!/^[a-zA-Z\s]+$/.test(value)) return 'First name can only contain letters';
+        break;
+      
+      case 'lastName':
+        if (!value.trim()) return 'Last name is required';
+        if (value.trim().length < 2) return 'Last name must be at least 2 characters';
+        if (!/^[a-zA-Z\s]+$/.test(value)) return 'Last name can only contain letters';
+        break;
+      
+      case 'email':
+        if (!value.trim()) return 'Email is required';
+        if (!emailRegex.test(value)) return 'Please enter a valid email address';
+        break;
+      
+      case 'subject':
+        if (value.trim().length > 100) return 'Subject must be less than 100 characters';
+        break;
+      
+      case 'message':
+        if (!value.trim()) return 'Message is required';
+        if (value.trim().length < 10) return 'Message must be at least 10 characters';
+        if (value.trim().length > 1000) return 'Message must be less than 1000 characters';
+        break;
+      
+      default:
+        return undefined;
+    }
+    return undefined;
+  };
+
+  // Handle input changes with real-time validation
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+
+    // Validate field if it has been touched
+    if (touched[name]) {
+      const error = validateField(name, value);
+      setErrors(prev => ({
+        ...prev,
+        [name]: error
+      }));
+    }
+  };
+
+  // Handle field blur (when user leaves the field)
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    setTouched(prev => ({
+      ...prev,
+      [name]: true
+    }));
+
+    const error = validateField(name, value);
+    setErrors(prev => ({
+      ...prev,
+      [name]: error
+    }));
+  };
+
+  // Validate entire form
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    let isValid = true;
+
+    Object.keys(formData).forEach(key => {
+      const error = validateField(key, formData[key as keyof FormData]);
+      if (error) {
+        newErrors[key as keyof FormErrors] = error;
+        isValid = false;
+      }
+    });
+
+    setErrors(newErrors);
+    setTouched({
+      firstName: true,
+      lastName: true,
+      email: true,
+      subject: true,
+      message: true
+    });
+
+    return isValid;
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    const formData = new FormData(e.currentTarget);
-    const firstName = formData.get('firstName') as string;
-    const lastName = formData.get('lastName') as string;
-    const email = formData.get('email') as string;
-    const subject = formData.get('subject') as string;
-    const message = formData.get('message') as string;
+    // Validate form
+    if (!validateForm()) {
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      return;
+    }
 
     // Create mailto link with form data
-    const mailtoSubject = encodeURIComponent(`Portfolio Contact: ${subject || 'New Message'}`);
+    const mailtoSubject = encodeURIComponent(`Portfolio Contact: ${formData.subject || 'New Message'}`);
     const mailtoBody = encodeURIComponent(`
-Name: ${firstName} ${lastName}
-Email: ${email}
-Subject: ${subject || 'No subject provided'}
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Subject: ${formData.subject || 'No subject provided'}
 
 Message:
-${message}
+${formData.message}
 
 ---
 This message was sent from your portfolio contact form.
@@ -40,7 +164,15 @@ This message was sent from your portfolio contact form.
       // Simulate success after a short delay
       setTimeout(() => {
         setSubmitStatus('success');
-        (e.target as HTMLFormElement).reset();
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setErrors({});
+        setTouched({});
         setIsSubmitting(false);
       }, 1000);
     } catch (error) {
@@ -75,7 +207,7 @@ This message was sent from your portfolio contact form.
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-funky text-4xl md:text-7xl text-black mb-8 transform rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <h2 className="text-4xl md:text-7xl text-black mb-8 transform rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             MISSION CONTROL
           </h2>
           <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
@@ -87,7 +219,7 @@ This message was sent from your portfolio contact form.
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="bg-white border-4 border-black p-8 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl">
-              <h3 className="font-funky text-2xl md:text-4xl text-black mb-6 transform rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Get In Touch</h3>
+              <h3 className="text-2xl md:text-4xl text-black mb-6 transform rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Get In Touch</h3>
               <p className="text-xl text-gray-700 mb-8 leading-relaxed font-bold">
                 Whether you have a project in mind, want to collaborate, or just want to say hello, 
                 I'm always open to discussing new opportunities and cosmic adventures!
@@ -127,7 +259,7 @@ This message was sent from your portfolio contact form.
             </div>
 
             <div className="bg-white border-4 border-black p-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl">
-              <h4 className="font-funky text-xl md:text-2xl text-black mb-6 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Follow My Journey</h4>
+              <h4 className="text-xl md:text-2xl text-black mb-6 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Follow My Journey</h4>
               <div className="flex gap-4">
                 <a href="https://github.com/tiklu01" className="w-16 h-16 bg-black border-4 border-gray-300 flex items-center justify-center hover:bg-gray-800 transition-all transform hover:scale-125 hover:rotate-12">
                   <Github className="w-8 h-8 text-white" />
@@ -135,9 +267,6 @@ This message was sent from your portfolio contact form.
                 <a href="https://www.linkedin.com/in/nanda-das-7b2242243/" className="w-16 h-16 bg-blue-600 border-4 border-blue-300 flex items-center justify-center hover:bg-blue-700 transition-all transform hover:scale-125 hover:rotate-12">
                   <Linkedin className="w-8 h-8 text-white" />
                 </a>
-                {/* <a href="#" className="w-16 h-16 bg-cyan-500 border-4 border-cyan-300 flex items-center justify-center hover:bg-cyan-600 transition-all transform hover:scale-125 hover:rotate-12">
-                  <Twitter className="w-8 h-8 text-white" />
-                </a> */}
               </div>
             </div>
           </div>
@@ -145,75 +274,122 @@ This message was sent from your portfolio contact form.
           {/* Contact Form */}
           <div className="bg-white border-4 border-black p-8 transform rotate-2 hover:rotate-0 transition-transform shadow-xl">
             <div className="text-center mb-8">
-              <h4 className="font-funky text-2xl md:text-4xl text-black mb-4 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+              <h4 className="text-2xl md:text-4xl text-black mb-4 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                 Send Transmission
               </h4>
               <p className="text-gray-700 font-bold">Launch your message into the digital cosmos!</p>
             </div>
 
-            <form 
-              onSubmit={handleSubmit}
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>First Name</label>
+                  <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                    First Name *
+                  </label>
                   <input 
                     type="text" 
                     name="firstName"
-                    required
-                    className="w-full px-6 py-4 border-4 border-black focus:outline-none font-bold text-lg"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    onBlur={handleBlur}
+                    className={`w-full px-6 py-4 border-4 focus:outline-none font-bold text-lg transition-colors ${
+                      errors.firstName ? 'border-red-500 bg-red-50' : 'border-black'
+                    }`}
                     placeholder="Space Explorer"
                   />
+                  {errors.firstName && (
+                    <p className="text-red-600 text-sm mt-2 font-bold">⚠️ {errors.firstName}</p>
+                  )}
                 </div>
                 <div>
-                  <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Last Name</label>
+                  <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                    Last Name *
+                  </label>
                   <input 
                     type="text" 
                     name="lastName"
-                    required
-                    className="w-full px-6 py-4 border-4 border-black focus:outline-none font-bold text-lg"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    onBlur={handleBlur}
+                    className={`w-full px-6 py-4 border-4 focus:outline-none font-bold text-lg transition-colors ${
+                      errors.lastName ? 'border-red-500 bg-red-50' : 'border-black'
+                    }`}
                     placeholder="Commander"
                   />
+                  {errors.lastName && (
+                    <p className="text-red-600 text-sm mt-2 font-bold">⚠️ {errors.lastName}</p>
+                  )}
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Quantum Email</label>
+                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                  Quantum Email *
+                </label>
                 <input 
                   type="email" 
                   name="email"
-                  required
-                  className="w-full px-6 py-4 border-4 border-black focus:outline-none font-bold text-lg"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  onBlur={handleBlur}
+                  className={`w-full px-6 py-4 border-4 focus:outline-none font-bold text-lg transition-colors ${
+                    errors.email ? 'border-red-500 bg-red-50' : 'border-black'
+                  }`}
                   placeholder="explorer@galaxy.space"
                 />
+                {errors.email && (
+                  <p className="text-red-600 text-sm mt-2 font-bold">⚠️ {errors.email}</p>
+                )}
               </div>
 
               <div>
-                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Mission Type</label>
+                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                  Mission Type
+                </label>
                 <input 
                   type="text" 
                   name="subject"
-                  className="w-full px-6 py-4 border-4 border-black focus:outline-none font-bold text-lg"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  onBlur={handleBlur}
+                  className={`w-full px-6 py-4 border-4 focus:outline-none font-bold text-lg transition-colors ${
+                    errors.subject ? 'border-red-500 bg-red-50' : 'border-black'
+                  }`}
                   placeholder="Epic Space Collaboration"
                 />
+                {errors.subject && (
+                  <p className="text-red-600 text-sm mt-2 font-bold">⚠️ {errors.subject}</p>
+                )}
+                <p className="text-gray-500 text-xs mt-1">Optional - Max 100 characters</p>
               </div>
 
               <div>
-                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Transmission Message</label>
+                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                  Transmission Message *
+                </label>
                 <textarea 
                   name="message"
                   rows={5}
-                  required
-                  className="w-full px-6 py-4 border-4 border-black focus:outline-none resize-none font-bold text-lg"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  onBlur={handleBlur}
+                  className={`w-full px-6 py-4 border-4 focus:outline-none resize-none font-bold text-lg transition-colors ${
+                    errors.message ? 'border-red-500 bg-red-50' : 'border-black'
+                  }`}
                   placeholder="Tell me about your cosmic project ideas..."
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-600 text-sm mt-2 font-bold">⚠️ {errors.message}</p>
+                )}
+                <p className="text-gray-500 text-xs mt-1">
+                  {formData.message.length}/1000 characters (min 10 required)
+                </p>
               </div>
 
               <button 
                 type="submit" 
                 disabled={isSubmitting}
-                className={`w-full px-8 py-6 text-xl uppercase tracking-wider transition-all transform hover:scale-105 hover:rotate-2 flex items-center justify-center gap-3 border-4 border-black shadow-xl btn-funky ${
+                className={`w-full px-8 py-6 text-xl uppercase tracking-wider transition-all transform hover:scale-105 hover:rotate-2 flex items-center justify-center gap-3 border-4 border-black shadow-xl ${
                   isSubmitting 
                     ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
                     : submitStatus === 'success'
@@ -230,7 +406,7 @@ This message was sent from your portfolio contact form.
                   : submitStatus === 'success'
                   ? 'Message Sent! 🚀'
                   : submitStatus === 'error'
-                  ? 'Try Again 🔄'
+                  ? 'Fix Errors Above ⚠️'
                   : 'Launch Message! 🚀'
                 }
               </button>
@@ -241,9 +417,9 @@ This message was sent from your portfolio contact form.
                 </div>
               )}
 
-              {submitStatus === 'error' && (
+              {submitStatus === 'error' && Object.keys(errors).length > 0 && (
                 <div className="bg-red-100 border-4 border-red-500 p-4 text-center transform -rotate-1">
-                  <p className="text-red-800 font-bold">❌ Houston, we have a problem! Please email directly: tikludas01@gmail.com</p>
+                  <p className="text-red-800 font-bold">❌ Please fix the errors above before launching your message!</p>
                 </div>
               )}
             </form>
