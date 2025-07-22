@@ -76,7 +76,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
 
       {/* Top Navigation Bar */}
       <nav
-        className="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-sm border-b-4 border-black"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b-4 border-black"
         style={{ boxShadow: "0 4px 0px rgba(76,236,196,0.3), 0 8px 0px rgba(255,107,107,0.2)" }}
       >
         <div className="container mx-auto px-4 md:px-6">
@@ -93,7 +93,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
                 <button
                   key={item.id}
                   onClick={() => onSectionChange(item.id)}
-                  className={`text-sm md:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 ${
+                  className={`text-sm md:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 cursor-pointer ${
                     activeSection === item.id ? "text-black" : "text-gray-600 hover:text-black"
                   }`}
                   style={{ fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
