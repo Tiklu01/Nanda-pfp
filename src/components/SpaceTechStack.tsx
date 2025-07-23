@@ -17,13 +17,13 @@ export default function TechStack() {
         },
         {
           name: "Next.js",
-          color: "from-green-400 to-green-600",
+          color: "from-gray-700 to-black",
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
         },
         {
           name: "Tailwind CSS",
           color: "from-teal-400 to-cyan-500",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
         },
       ],
     },
@@ -36,15 +36,55 @@ export default function TechStack() {
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
         },
         {
-          name: "Express",
-          color: "from-gray-400 to-gray-600",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+          name: "Python",
+          color: "from-yellow-400 to-blue-500",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
         },
         {
           name: "FastAPI",
           color: "from-green-400 to-teal-600",
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
         },
+        {
+          name: "Express",
+          color: "from-gray-400 to-gray-600",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+        },
+      ],
+    },
+    {
+      title: "Languages",
+      technologies: [
+        {
+          name: "JavaScript",
+          color: "from-yellow-400 to-yellow-600",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        },
+        {
+          name: "TypeScript",
+          color: "from-blue-400 to-blue-600",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        },
+        {
+          name: "Python",
+          color: "from-yellow-400 to-blue-500",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+        },
+        {
+          name: "C++",
+          color: "from-blue-500 to-purple-600",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+        },
+        {
+          name: "Java",
+          color: "from-red-500 to-orange-600",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+        },
+      ],
+    },
+    {
+      title: "Database",
+      technologies: [
         {
           name: "PostgreSQL",
           color: "from-blue-400 to-indigo-500",
@@ -95,29 +135,51 @@ export default function TechStack() {
   ]
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-br from-green-100 to-blue-100 relative overflow-hidden">
+      {/* Floating decorations */}
+      <div className="absolute top-20 right-20 animate-orbit">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <polygon points="30,5 35,20 50,20 38,30 43,45 30,37 17,45 22,30 10,20 25,20" fill="#ffff00" stroke="#000" strokeWidth="3"/>
+        </svg>
+      </div>
+
+      <div className="absolute bottom-20 left-20 animate-drift">
+        <svg width="50" height="50" viewBox="0 0 50 50">
+          <circle cx="25" cy="25" r="20" fill="#ff6b6b" stroke="#000" strokeWidth="3"/>
+          <circle cx="20" cy="20" r="3" fill="#000"/>
+          <circle cx="30" cy="20" r="3" fill="#000"/>
+          <path d="M 15 30 Q 25 40 35 30" stroke="#000" strokeWidth="2" fill="none"/>
+        </svg>
+      </div>
+
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Tech Stack</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Technologies and tools I use to bring ideas to life</p>
+          <h2 className="font-funky text-4xl md:text-7xl text-black mb-8 transform -rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+            TECH ARSENAL
+          </h2>
+          <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
+            My cosmic toolkit for building digital universes!
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {techCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">{category.title}</h3>
+              <h3 className="font-funky text-2xl md:text-3xl text-black text-center mb-6 transform rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                {category.title}
+              </h3>
 
               <div className="space-y-4">
                 {category.technologies.map((tech, techIndex) => (
                   <div
                     key={techIndex}
-                    className="group relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:rotate-1 cursor-pointer animate-float animate-bounce-slow"
+                    className={`group relative bg-white border-4 border-black p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer transform ${techIndex % 2 === 0 ? 'rotate-1' : '-rotate-1'} hover:rotate-0 blob-${(techIndex % 4) + 1}`}
                     style={{
                       animationDelay: `${categoryIndex * 300 + techIndex * 150}ms`,
                     }}
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-white rounded-xl shadow-lg flex items-center justify-center p-3 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 animate-pulse-slow">
+                      <div className="w-16 h-16 bg-white border-2 border-black shadow-lg flex items-center justify-center p-3 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                         <img
                           src={tech.image || "/placeholder.svg"}
                           alt={`${tech.name} icon`}
@@ -137,7 +199,7 @@ export default function TechStack() {
                         />
                       </div>
                       <div>
-                        <h4 className="font-bold text-lg text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-500 group-hover:to-purple-600 transition-all duration-300">
+                        <h4 className="font-black text-lg text-black group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-500 group-hover:to-purple-600 transition-all duration-300">
                           {tech.name}
                         </h4>
                       </div>
@@ -167,32 +229,32 @@ export default function TechStack() {
           ))}
         </div>
 
-        {/* Enhanced animated background elements */}
-        <div className="relative mt-16">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 left-1/4 w-3 h-3 bg-blue-400 rounded-full animate-bounce"></div>
-            <div className="absolute top-1/4 right-1/3 w-4 h-4 bg-purple-400 rounded-full animate-pulse"></div>
-            <div
-              className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-green-400 rounded-full animate-bounce"
-              style={{ animationDelay: "1s" }}
-            ></div>
-            <div
-              className="absolute bottom-0 right-1/4 w-4 h-4 bg-yellow-400 rounded-full animate-pulse"
-              style={{ animationDelay: "2s" }}
-            ></div>
-            <div
-              className="absolute top-1/2 left-1/6 w-2 h-2 bg-red-400 rounded-full animate-ping"
-              style={{ animationDelay: "1.5s" }}
-            ></div>
-            <div
-              className="absolute bottom-1/3 right-1/6 w-2 h-2 bg-cyan-400 rounded-full animate-ping"
-              style={{ animationDelay: "2.5s" }}
-            ></div>
-          </div>
-        </div>
       </div>
 
-      <style >{`
+      <style>{`
+        .font-funky {
+          font-family: 'Comic Sans MS', cursive, sans-serif;
+          font-weight: 900 !important;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        .text-shadow-fun {
+          text-shadow: 3px 3px 0px #000;
+          font-weight: 900 !important;
+        }
+        .blob-1 {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .blob-2 {
+          border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        }
+        .blob-3 {
+          border-radius: 40% 60% 60% 40% / 60% 30% 60% 40%;
+        }
+        .blob-4 {
+          border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%;
+        }
+        
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-8px); }
@@ -206,6 +268,16 @@ export default function TechStack() {
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
+        @keyframes orbit {
+          0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+        }
+        @keyframes drift {
+          0%, 100% { transform: translateX(0px) translateY(0px); }
+          25% { transform: translateX(20px) translateY(-10px); }
+          50% { transform: translateX(-15px) translateY(-20px); }
+          75% { transform: translateX(10px) translateY(-5px); }
+        }
         
         .animate-float {
           animation: float 4s ease-in-out infinite;
@@ -216,6 +288,12 @@ export default function TechStack() {
         .animate-gradient-shift {
           background-size: 200% 200%;
           animation: gradient-shift 3s ease infinite;
+        }
+        .animate-orbit {
+          animation: orbit 25s linear infinite;
+        }
+        .animate-drift {
+          animation: drift 20s ease-in-out infinite;
         }
         .animate-bounce-slow {
           animation: bounce 3s ease infinite;
