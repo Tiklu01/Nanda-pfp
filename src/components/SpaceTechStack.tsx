@@ -10,8 +10,8 @@ export default function SpaceTechStack() {
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
         },
         {
-          name: "TypeScript",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+          name: "Three.Js",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
         },
         {
           name: "Next.js",
@@ -37,6 +37,10 @@ export default function SpaceTechStack() {
         {
           name: "Express",
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+        },
+         {
+          name: "Next.js",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
         },
       ],
     },
