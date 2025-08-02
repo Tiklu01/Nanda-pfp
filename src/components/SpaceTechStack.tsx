@@ -115,7 +115,7 @@ export default function SpaceTechStack() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-green-100 to-blue-100 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-green-100 to-blue-100 dark:from-gray-900 dark:to-green-900 relative overflow-hidden">
       {/* Floating decorations */}
       <div className="absolute top-20 right-20 animate-orbit">
         <svg width="60" height="60" viewBox="0 0 60 60">
@@ -134,18 +134,18 @@ export default function SpaceTechStack() {
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-funky text-4xl md:text-7xl text-black mb-8 transform -rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <h2 className="font-funky text-4xl md:text-7xl text-black dark:text-white mb-8 transform -rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             TECH ARSENAL
           </h2>
-          <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
+          <p className="text-2xl text-gray-700 dark:text-gray-200 max-w-3xl mx-auto font-bold">
             My cosmic toolkit for building digital universes!
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {techCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-white border-4 border-black p-6 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-              <h3 className="font-funky text-xl md:text-2xl text-black text-center mb-6 pb-4 border-b-2 border-black" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+            <div key={categoryIndex} className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-6 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+              <h3 className="font-funky text-xl md:text-2xl text-black dark:text-white text-center mb-6 pb-4 border-b-2 border-black dark:border-white" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                 {category.title}
               </h3>
 
@@ -153,7 +153,7 @@ export default function SpaceTechStack() {
                 {category.technologies.map((tech, techIndex) => (
                   <div
                     key={techIndex}
-                    className="group flex flex-col items-center p-4 bg-gray-50 border-2 border-gray-200 hover:border-black hover:bg-white transition-all duration-300 hover:shadow-lg"
+                    className="group flex flex-col items-center p-4 bg-gray-50 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 hover:border-black dark:hover:border-white hover:bg-white dark:hover:bg-gray-600 transition-all duration-300 hover:shadow-lg"
                   >
                     <div className="w-12 h-12 mb-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img
@@ -173,7 +173,7 @@ export default function SpaceTechStack() {
                         }}
                       />
                     </div>
-                    <span className="text-sm font-bold text-gray-800 text-center group-hover:text-black transition-colors duration-300">
+                    <span className="text-sm font-bold text-gray-800 dark:text-gray-200 text-center group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
                       {tech.name}
                     </span>
                   </div>

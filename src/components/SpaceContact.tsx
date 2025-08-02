@@ -183,7 +183,7 @@ This message was sent from your portfolio contact form.
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-cyan-100 to-blue-100 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-gray-900 dark:to-cyan-900 relative overflow-hidden">
       {/* Floating planet */}
       <div className="absolute top-20 right-20 animate-spin-slow">
         <svg width="100" height="100" viewBox="0 0 100 100" className="drop-shadow-lg">
@@ -207,10 +207,10 @@ This message was sent from your portfolio contact form.
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-7xl text-black mb-8 transform rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <h2 className="text-4xl md:text-7xl text-black dark:text-white mb-8 transform rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             MISSION CONTROL
           </h2>
-          <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
+          <p className="text-2xl text-gray-700 dark:text-gray-200 max-w-3xl mx-auto font-bold">
             Ready to launch your next digital adventure? Let's connect!
           </p>
         </div>
@@ -218,53 +218,53 @@ This message was sent from your portfolio contact form.
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="bg-white border-4 border-black p-8 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl">
-              <h3 className="text-2xl md:text-4xl text-black mb-6 transform rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Get In Touch</h3>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed font-bold">
+            <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-8 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl">
+              <h3 className="text-2xl md:text-4xl text-black dark:text-white mb-6 transform rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Get In Touch</h3>
+              <p className="text-xl text-gray-700 dark:text-gray-200 mb-8 leading-relaxed font-bold">
                 Whether you have a project in mind, want to collaborate, or just want to say hello, 
                 I'm always open to discussing new opportunities and cosmic adventures!
               </p>
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-center gap-6 bg-yellow-300 border-4 border-black p-6 transform rotate-1 hover:rotate-0 transition-transform shadow-xl">
-                <div className="w-16 h-16 bg-black flex items-center justify-center border-2 border-white">
-                  <Mail className="w-8 h-8 text-white" />
+              <div className="flex items-center gap-6 bg-yellow-300 dark:bg-yellow-400 border-4 border-black dark:border-white p-6 transform rotate-1 hover:rotate-0 transition-transform shadow-xl">
+                <div className="w-16 h-16 bg-black dark:bg-white flex items-center justify-center border-2 border-white dark:border-black">
+                  <Mail className="w-8 h-8 text-white dark:text-black" />
                 </div>
                 <div>
                   <p className="font-black text-black text-xl">Space Mail</p>
-                  <p className="text-gray-700 font-bold">tikludas01@gmail.com</p>
+                  <p className="text-gray-700 dark:text-gray-800 font-bold">tikludas01@gmail.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 bg-pink-300 border-4 border-black p-6 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl">
-                <div className="w-16 h-16 bg-black flex items-center justify-center border-2 border-white">
-                  <Phone className="w-8 h-8 text-white" />
+              <div className="flex items-center gap-6 bg-pink-300 dark:bg-pink-400 border-4 border-black dark:border-white p-6 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl">
+                <div className="w-16 h-16 bg-black dark:bg-white flex items-center justify-center border-2 border-white dark:border-black">
+                  <Phone className="w-8 h-8 text-white dark:text-black" />
                 </div>
                 <div>
                   <p className="font-black text-black text-xl">Quantum Phone</p>
-                  <p className="text-gray-700 font-bold">Ain&apos;t Giving 🙂‍↔️</p>
+                  <p className="text-gray-700 dark:text-gray-800 font-bold">Ain&apos;t Giving 🙂‍↔️</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 bg-green-300 border-4 border-black p-6 transform rotate-2 hover:rotate-0 transition-transform shadow-xl">
-                <div className="w-16 h-16 bg-black flex items-center justify-center border-2 border-white">
-                  <MapPin className="w-8 h-8 text-white" />
+              <div className="flex items-center gap-6 bg-green-300 dark:bg-green-400 border-4 border-black dark:border-white p-6 transform rotate-2 hover:rotate-0 transition-transform shadow-xl">
+                <div className="w-16 h-16 bg-black dark:bg-white flex items-center justify-center border-2 border-white dark:border-black">
+                  <MapPin className="w-8 h-8 text-white dark:text-black" />
                 </div>
                 <div>
                   <p className="font-black text-black text-xl">Home Base</p>
-                  <p className="text-gray-700 font-bold">Kolkata, WB</p>
+                  <p className="text-gray-700 dark:text-gray-800 font-bold">Kolkata, WB</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white border-4 border-black p-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl">
-              <h4 className="text-xl md:text-2xl text-black mb-6 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Follow My Journey</h4>
+            <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl">
+              <h4 className="text-xl md:text-2xl text-black dark:text-white mb-6 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Follow My Journey</h4>
               <div className="flex gap-4">
-                <a href="https://github.com/tiklu01" className="w-16 h-16 bg-black border-4 border-gray-300 flex items-center justify-center hover:bg-gray-800 transition-all transform hover:scale-125 hover:rotate-12">
-                  <Github className="w-8 h-8 text-white" />
+                <a href="https://github.com/tiklu01" className="w-16 h-16 bg-black dark:bg-white border-4 border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-125 hover:rotate-12">
+                  <Github className="w-8 h-8 text-white dark:text-black" />
                 </a>
-                <a href="https://www.linkedin.com/in/nanda-das-7b2242243/" className="w-16 h-16 bg-blue-600 border-4 border-blue-300 flex items-center justify-center hover:bg-blue-700 transition-all transform hover:scale-125 hover:rotate-12">
+                <a href="https://www.linkedin.com/in/nanda-das-7b2242243/" className="w-16 h-16 bg-blue-600 dark:bg-blue-500 border-4 border-blue-300 dark:border-blue-400 flex items-center justify-center hover:bg-blue-700 dark:hover:bg-blue-600 transition-all transform hover:scale-125 hover:rotate-12">
                   <Linkedin className="w-8 h-8 text-white" />
                 </a>
               </div>
@@ -272,18 +272,18 @@ This message was sent from your portfolio contact form.
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white border-4 border-black p-8 transform rotate-2 hover:rotate-0 transition-transform shadow-xl">
+          <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-8 transform rotate-2 hover:rotate-0 transition-transform shadow-xl">
             <div className="text-center mb-8">
-              <h4 className="text-2xl md:text-4xl text-black mb-4 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+              <h4 className="text-2xl md:text-4xl text-black dark:text-white mb-4 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                 Send Transmission
               </h4>
-              <p className="text-gray-700 font-bold">Launch your message into the digital cosmos!</p>
+              <p className="text-gray-700 dark:text-gray-200 font-bold">Launch your message into the digital cosmos!</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                  <label className="block text-sm mb-3 text-black dark:text-white uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                     First Name *
                   </label>
                   <input 
@@ -293,7 +293,7 @@ This message was sent from your portfolio contact form.
                     onChange={handleInputChange}
                     onBlur={handleBlur}
                     className={`w-full px-6 py-4 border-4 focus:outline-none font-bold text-lg transition-colors ${
-                      errors.firstName ? 'border-red-500 bg-red-50' : 'border-black'
+                      errors.firstName ? 'border-red-500 bg-red-50 dark:bg-red-900' : 'border-black dark:border-white bg-white dark:bg-gray-700 text-black dark:text-white'
                     }`}
                     placeholder="Space Explorer"
                   />
@@ -302,7 +302,7 @@ This message was sent from your portfolio contact form.
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                  <label className="block text-sm mb-3 text-black dark:text-white uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                     Last Name *
                   </label>
                   <input 
@@ -312,7 +312,7 @@ This message was sent from your portfolio contact form.
                     onChange={handleInputChange}
                     onBlur={handleBlur}
                     className={`w-full px-6 py-4 border-4 focus:outline-none font-bold text-lg transition-colors ${
-                      errors.lastName ? 'border-red-500 bg-red-50' : 'border-black'
+                      errors.lastName ? 'border-red-500 bg-red-50 dark:bg-red-900' : 'border-black dark:border-white bg-white dark:bg-gray-700 text-black dark:text-white'
                     }`}
                     placeholder="Commander"
                   />
@@ -323,7 +323,7 @@ This message was sent from your portfolio contact form.
               </div>
 
               <div>
-                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                <label className="block text-sm mb-3 text-black dark:text-white uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                   Quantum Email *
                 </label>
                 <input 
@@ -333,7 +333,7 @@ This message was sent from your portfolio contact form.
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                   className={`w-full px-6 py-4 border-4 focus:outline-none font-bold text-lg transition-colors ${
-                    errors.email ? 'border-red-500 bg-red-50' : 'border-black'
+                    errors.email ? 'border-red-500 bg-red-50 dark:bg-red-900' : 'border-black dark:border-white bg-white dark:bg-gray-700 text-black dark:text-white'
                   }`}
                   placeholder="explorer@galaxy.space"
                 />
@@ -343,7 +343,7 @@ This message was sent from your portfolio contact form.
               </div>
 
               <div>
-                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                <label className="block text-sm mb-3 text-black dark:text-white uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                   Mission Type
                 </label>
                 <input 
@@ -353,18 +353,18 @@ This message was sent from your portfolio contact form.
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                   className={`w-full px-6 py-4 border-4 focus:outline-none font-bold text-lg transition-colors ${
-                    errors.subject ? 'border-red-500 bg-red-50' : 'border-black'
+                    errors.subject ? 'border-red-500 bg-red-50 dark:bg-red-900' : 'border-black dark:border-white bg-white dark:bg-gray-700 text-black dark:text-white'
                   }`}
                   placeholder="Epic Space Collaboration"
                 />
                 {errors.subject && (
                   <p className="text-red-600 text-sm mt-2 font-bold">⚠️ {errors.subject}</p>
                 )}
-                <p className="text-gray-500 text-xs mt-1">Optional - Max 100 characters</p>
+                <p className="text-gray-500 dark:text-gray-400 text-xs mt-1">Optional - Max 100 characters</p>
               </div>
 
               <div>
-                <label className="block text-sm mb-3 text-black uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                <label className="block text-sm mb-3 text-black dark:text-white uppercase tracking-wider" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                   Transmission Message *
                 </label>
                 <textarea 
@@ -374,14 +374,14 @@ This message was sent from your portfolio contact form.
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                   className={`w-full px-6 py-4 border-4 focus:outline-none resize-none font-bold text-lg transition-colors ${
-                    errors.message ? 'border-red-500 bg-red-50' : 'border-black'
+                    errors.message ? 'border-red-500 bg-red-50 dark:bg-red-900' : 'border-black dark:border-white bg-white dark:bg-gray-700 text-black dark:text-white'
                   }`}
                   placeholder="Tell me about your cosmic project ideas..."
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-600 text-sm mt-2 font-bold">⚠️ {errors.message}</p>
                 )}
-                <p className="text-gray-500 text-xs mt-1">
+                <p className="text-gray-500 dark:text-gray-400 text-xs mt-1">
                   {formData.message.length}/1000 characters (min 10 required)
                 </p>
               </div>
@@ -389,14 +389,14 @@ This message was sent from your portfolio contact form.
               <button 
                 type="submit" 
                 disabled={isSubmitting}
-                className={`w-full px-8 py-6 text-xl uppercase tracking-wider transition-all transform hover:scale-105 hover:rotate-2 flex items-center justify-center gap-3 border-4 border-black shadow-xl ${
+                className={`w-full px-8 py-6 text-xl uppercase tracking-wider transition-all transform hover:scale-105 hover:rotate-2 flex items-center justify-center gap-3 border-4 border-black dark:border-white shadow-xl ${
                   isSubmitting 
-                    ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
+                    ? 'bg-gray-600 dark:bg-gray-700 text-gray-300 cursor-not-allowed' 
                     : submitStatus === 'success'
-                    ? 'bg-green-600 text-white hover:bg-green-700'
+                    ? 'bg-green-600 dark:bg-green-500 text-white hover:bg-green-700 dark:hover:bg-green-600'
                     : submitStatus === 'error'
-                    ? 'bg-red-600 text-white hover:bg-red-700'
-                    : 'bg-black text-white hover:bg-gray-800'
+                    ? 'bg-red-600 dark:bg-red-500 text-white hover:bg-red-700 dark:hover:bg-red-600'
+                    : 'bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200'
                 }`}
                 style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
               >
@@ -412,14 +412,14 @@ This message was sent from your portfolio contact form.
               </button>
 
               {submitStatus === 'success' && (
-                <div className="bg-green-100 border-4 border-green-500 p-4 text-center transform rotate-1">
-                  <p className="text-green-800 font-bold">🎉 Email client opened! Please send the message from your email app.</p>
+                <div className="bg-green-100 dark:bg-green-900 border-4 border-green-500 dark:border-green-400 p-4 text-center transform rotate-1">
+                  <p className="text-green-800 dark:text-green-200 font-bold">🎉 Email client opened! Please send the message from your email app.</p>
                 </div>
               )}
 
               {submitStatus === 'error' && Object.keys(errors).length > 0 && (
-                <div className="bg-red-100 border-4 border-red-500 p-4 text-center transform -rotate-1">
-                  <p className="text-red-800 font-bold">❌ Please fix the errors above before launching your message!</p>
+                <div className="bg-red-100 dark:bg-red-900 border-4 border-red-500 dark:border-red-400 p-4 text-center transform -rotate-1">
+                  <p className="text-red-800 dark:text-red-200 font-bold">❌ Please fix the errors above before launching your message!</p>
                 </div>
               )}
             </form>

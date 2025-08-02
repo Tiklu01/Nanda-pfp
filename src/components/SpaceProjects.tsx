@@ -87,7 +87,7 @@ export default function SpaceProjects() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-100 to-pink-100 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-yellow-100 to-pink-100 dark:from-gray-900 dark:to-purple-900 relative overflow-hidden">
       {/* Floating decorations */}
       <div className="absolute top-20 left-10 animate-orbit">
         <svg width="60" height="60" viewBox="0 0 60 60">
@@ -109,10 +109,10 @@ export default function SpaceProjects() {
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-funky text-4xl md:text-7xl text-black mb-8 transform -rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <h2 className="font-funky text-4xl md:text-7xl text-black dark:text-white mb-8 transform -rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             SPACE MISSIONS
           </h2>
-          <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
+          <p className="text-2xl text-gray-700 dark:text-gray-200 max-w-3xl mx-auto font-bold">
             Epic projects from across the digital universe!
           </p>
         </div>
@@ -121,9 +121,9 @@ export default function SpaceProjects() {
           {projects.map((project, index) => (
             <div 
               key={project.id} 
-              className={`bg-white border-4 border-black shadow-xl hover-lift transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'} hover:rotate-0`}
+              className={`bg-white dark:bg-gray-800 border-4 border-black dark:border-white shadow-xl hover-lift transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'} hover:rotate-0`}
             >
-              <div className="relative aspect-video bg-gray-900 overflow-hidden border-b-4 border-black">
+              <div className="relative aspect-video bg-gray-900 overflow-hidden border-b-4 border-black dark:border-white">
                 {playingVideo === project.id ? (
                   <video 
                     src={project.video} 
@@ -160,10 +160,10 @@ export default function SpaceProjects() {
               </div>
               
               <div className="p-8">
-                <h3 className="font-funky text-2xl md:text-3xl text-black mb-4 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+                <h3 className="font-funky text-2xl md:text-3xl text-black dark:text-white mb-4 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
                   {project.title}
                 </h3>
-                <p className="text-gray-700 mb-6 leading-relaxed font-semibold text-lg">
+                <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed font-semibold text-lg">
                   {project.description}
                 </p>
                 
@@ -187,7 +187,7 @@ export default function SpaceProjects() {
                     href={project.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-black text-white uppercase tracking-wider hover:bg-gray-800 transition-all transform hover:scale-105 hover:rotate-2 border-4 border-black" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
+                    className="flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 border-4 border-black dark:border-white" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
                   >
                     <Github className="w-5 h-5" />
                     CODE
@@ -197,7 +197,7 @@ export default function SpaceProjects() {
                       href={project.demo} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 bg-yellow-300 text-black uppercase tracking-wider hover:bg-yellow-400 transition-all transform hover:scale-105 hover:-rotate-2 border-4 border-black" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
+                      className="flex items-center gap-2 px-6 py-3 bg-yellow-300 dark:bg-yellow-400 text-black uppercase tracking-wider hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-all transform hover:scale-105 hover:-rotate-2 border-4 border-black dark:border-white" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
                     >
                       <ExternalLink className="w-5 h-5" />
                       DEMO

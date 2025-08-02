@@ -44,7 +44,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <SpaceNavigation activeSection={activeSection} onSectionChange={handleSectionChange} />
       
       <div id="home">

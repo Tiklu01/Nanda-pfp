@@ -2,7 +2,7 @@
 
 export default function SpaceAbout() {
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-br from-pink-100 to-purple-100 relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-gradient-to-br from-pink-100 to-purple-100 dark:from-gray-800 dark:to-purple-900 relative overflow-hidden">
       {/* Floating elements with better mobile positioning */}
       <div className="absolute top-10 md:top-20 right-4 md:right-20 animate-wiggle">
         <svg width="50" height="50" viewBox="0 0 60 60" className="drop-shadow-lg md:w-[60px] md:h-[60px]">
@@ -30,18 +30,18 @@ export default function SpaceAbout() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
-            <h2 className="font-funky text-4xl md:text-7xl text-black mb-6 md:mb-8 transform -rotate-2 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+            <h2 className="font-funky text-4xl md:text-7xl text-black dark:text-white mb-6 md:mb-8 transform -rotate-2 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
               ABOUT THE
               <br />
               <span className="transform rotate-1 inline-block">EXPLORER</span>
             </h2>
-            <div className="bg-white border-4 border-black p-6 md:p-8 mb-6 md:mb-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 animate-float-gentle">
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-bold">
+            <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-6 md:p-8 mb-6 md:mb-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 animate-float-gentle">
+              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed font-bold">
                I&apos;m a full-stack developer who loves building simple, user-friendly web apps. I won the MSME Hackathon 4.0 for creative tech solutions. Beyond code, I enjoy music, gaming, and picking up new skills just for fun.
               </p>
             </div>
-            <div className="bg-white border-4 border-black p-6 md:p-8 mb-6 md:mb-8 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl blob-4 animate-float-gentle-delay">
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-bold">
+            <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-6 md:p-8 mb-6 md:mb-8 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl blob-4 animate-float-gentle-delay">
+              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed font-bold">
                 My mission is to bridge the gap between design and technology, creating solutions that are both
                 beautiful and functional. Every project is an opportunity to explore new territories in the digital
                 cosmos!
@@ -72,7 +72,7 @@ export default function SpaceAbout() {
           <div className="relative mt-8 lg:mt-0">
             {/* White oval container with your image inside */}
             <div className="relative w-full max-w-xs md:max-w-sm mx-auto">
-              <div className="bg-white border-4 border-black p-4 md:p-6 transform rotate-2 hover:rotate-0 transition-transform shadow-xl animate-wiggle-gentle oval-container">
+              <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-4 md:p-6 transform rotate-2 hover:rotate-0 transition-transform shadow-xl animate-wiggle-gentle oval-container">
                 <div className="relative overflow-hidden oval-image">
                   <img
                     src="https://res.cloudinary.com/dwt633pc6/image/upload/v1753080603/Nanda_h3wkqc.png"

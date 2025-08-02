@@ -3,7 +3,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
 export default function SpaceHero() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-yellow-100 via-pink-100 to-purple-100 relative overflow-hidden pt-20">
+    <section className="min-h-screen bg-gradient-to-br from-yellow-100 via-pink-100 to-purple-100 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 relative overflow-hidden pt-20">
       {/* Floating UFO with love Animation - Top Right */}
       <div className="absolute top-16 md:top-20 right-1 md:right-8 animate-float">
         <div className="w-[120px] h-[100px] md:w-[180px] md:h-[150px]">
@@ -75,21 +75,21 @@ export default function SpaceHero() {
       <div className="relative z-10 container mx-auto px-4 md:px-6 py-12 md:py-20 flex flex-col items-center justify-center min-h-screen text-center">
         <div className="mb-8 md:mb-12">
           <h1 className="font-funky text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black mb-2 md:mb-4 transform -rotate-2 text-shadow-fun blob-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
-            EXPLORE
+            <span className="dark:text-white">EXPLORE</span>
           </h1>
           <h2 className="font-funky text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black transform rotate-1 text-shadow-fun blob-2" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
-            THE SPACE
+            <span className="dark:text-white">THE SPACE</span>
           </h2>
         </div>
 
-        <div className="bg-white border-4 border-black p-4 md:p-6 lg:p-8 mb-6 md:mb-8 lg:mb-12 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 max-w-xl md:max-w-2xl mx-4">
-          <p className="text-base md:text-lg lg:text-xl text-gray-700 font-bold leading-relaxed">
+        <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-4 md:p-6 lg:p-8 mb-6 md:mb-8 lg:mb-12 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 max-w-xl md:max-w-2xl mx-4">
+          <p className="text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-200 font-bold leading-relaxed">
             You don&apos;t need a PhD to win in life — just curiosity, code, and a little rebellion. Let&apos;s make the World weird, useful, and maybe even profitable together!
           </p>
         </div>
 
         <div className="relative">
-          <button className="bg-black text-white px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 text-base md:text-lg lg:text-xl uppercase tracking-wider hover:bg-gray-800 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black blob-4" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <button className="bg-black dark:bg-white text-white dark:text-black px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 text-base md:text-lg lg:text-xl uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             Nanda Lal Das
           </button>
 
