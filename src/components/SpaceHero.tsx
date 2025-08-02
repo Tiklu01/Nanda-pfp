@@ -16,8 +16,8 @@ export default function SpaceHero() {
         </div>
       </div>
 
-      {/* UFO with bomb - Top Left */}
-      <div className="absolute top-20 md:top-24 left-1 md:left-8 animate-wiggle">
+      {/* UFO with bomb - Top Left - Hidden on desktop to avoid nav overlap */}
+      <div className="absolute top-20 md:top-24 left-1 md:left-8 animate-wiggle block md:hidden">
         <div className="w-[100px] h-[130px] md:w-[150px] md:h-[200px]">
           <DotLottieReact
             src="https://lottie.host/6377263d-c4bb-47f7-a102-3bee449c3b58/Q8YL7KqiMx.lottie"
@@ -89,7 +89,7 @@ export default function SpaceHero() {
         </div>
 
         <div className="relative">
-          <button className="bg-black dark:bg-white text-white dark:text-black px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 text-base md:text-lg lg:text-xl uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <button className="bg-black dark:bg-white text-white dark:text-black hover:text-gray-300 dark:hover:text-gray-700 px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 text-base md:text-lg lg:text-xl uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             Nanda Lal Das
           </button>
 

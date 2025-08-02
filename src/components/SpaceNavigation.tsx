@@ -47,8 +47,8 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
 
   return (
     <>
-      {/* Floating UFO Navigation */}
-      <div className="fixed top-20 md:top-8 right-2 md:left-4 z-50">
+      {/* Floating UFO Navigation (Mobile Only) */}
+      <div className="fixed top-20 md:top-8 right-2 md:left-4 z-50 lg:hidden">
         <div className="relative">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="group relative">
             {/* UFO Body */}
@@ -108,7 +108,8 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
         style={{ boxShadow: "0 4px 0px rgba(76,236,196,0.3), 0 8px 0px rgba(255,107,107,0.2)" }}
       >
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-16 md:h-20 w-full">
+            {/* Portfolio text - Leftmost end */}
             <div
               className="font-funky text-xl md:text-3xl text-black dark:text-white transform -rotate-2"
               style={{ textShadow: "2px 2px 0px #4ecdc4", fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
@@ -116,7 +117,26 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
               <span>PORTFOLIO</span>
             </div>
 
+            {/* Navigation and toggle - Rightmost end */}
             <div className="flex items-center space-x-4 md:space-x-6">
+              {/* Navigation Menu */}
+              <div className="hidden lg:flex items-center space-x-6 md:space-x-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => onSectionChange(item.id)}
+                  className={`text-sm md:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 cursor-pointer ${
+                    activeSection === item.id 
+                      ? "text-black dark:text-white" 
+                      : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                  }`}
+                  style={{ fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
@@ -144,29 +164,10 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
                   )}
                 </div>
               </button>
-
-              <div className="hidden lg:flex items-center space-x-6 md:space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => onSectionChange(item.id)}
-                  className={`text-sm md:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 cursor-pointer ${
-                    activeSection === item.id 
-                      ? "text-black dark:text-white" 
-                      : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
-                  }`}
-                  style={{ fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
             </div>
           </div>
         </div>
-      </nav>
-
-      {/* Custom styles */}
+      </nav>      {/* Custom styles */}
       <style>{`
         .font-funky {
           font-family: 'Comic Sans MS', cursive, sans-serif;
