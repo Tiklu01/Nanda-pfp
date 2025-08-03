@@ -107,46 +107,49 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
         className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b-4 border-black dark:border-white"
         style={{ boxShadow: "0 4px 0px rgba(76,236,196,0.3), 0 8px 0px rgba(255,107,107,0.2)" }}
       >
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-center justify-between h-16 md:h-20 w-full">
-            {/* Portfolio text - Leftmost end */}
+        <div className="w-full px-4 md:px-6">
+          <div className="flex items-center justify-between h-16 md:h-20 max-w-none">
+            {/* Portfolio text - Absolute leftmost */}
             <div
-              className="font-funky text-xl md:text-3xl text-black dark:text-white transform -rotate-2"
+              className="font-funky text-xl md:text-3xl text-black dark:text-white transform -rotate-2 flex-shrink-0"
               style={{ textShadow: "2px 2px 0px #4ecdc4", fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
             >
               <span>PORTFOLIO</span>
             </div>
 
-            {/* Navigation and toggle - Rightmost end */}
-            <div className="flex items-center space-x-4 md:space-x-6">
-              {/* Navigation Menu */}
-              <div className="hidden lg:flex items-center space-x-6 md:space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => onSectionChange(item.id)}
-                  className={`text-sm md:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 cursor-pointer ${
-                    activeSection === item.id 
-                      ? "text-black dark:text-white" 
-                      : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
-                  }`}
-                  style={{ fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+            {/* Spacer to push content to edges */}
+            <div className="flex-1"></div>
+
+            {/* Navigation and toggle - Absolute rightmost */}
+            <div className="flex items-center space-x-4 md:space-x-6 flex-shrink-0">
+              {/* Navigation Menu - Desktop only */}
+              <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => onSectionChange(item.id)}
+                    className={`text-xs xl:text-sm 2xl:text-lg hover:transform hover:rotate-2 hover:scale-110 transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                      activeSection === item.id 
+                        ? "text-black dark:text-white" 
+                        : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                    }`}
+                    style={{ fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif' }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
 
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
-                className="relative w-12 h-12 md:w-16 md:h-16 bg-yellow-300 dark:bg-purple-600 border-4 border-black dark:border-white transform rotate-12 hover:rotate-0 hover:scale-110 transition-all duration-300 shadow-xl"
+                className="relative w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-yellow-300 dark:bg-purple-600 border-4 border-black dark:border-white transform rotate-12 hover:rotate-0 hover:scale-110 transition-all duration-300 shadow-xl flex-shrink-0"
                 style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" }}
                 title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
                   {isDarkMode ? (
-                    <svg width="24" height="24" viewBox="0 0 24 24" className="text-yellow-300">
+                    <svg width="20" height="20" viewBox="0 0 24 24" className="text-yellow-300 md:w-6 md:h-6">
                       <circle cx="12" cy="12" r="5" fill="currentColor"/>
                       <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2"/>
                       <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2"/>
@@ -158,7 +161,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
                       <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2"/>
                     </svg>
                   ) : (
-                    <svg width="24" height="24" viewBox="0 0 24 24" className="text-purple-800">
+                    <svg width="20" height="20" viewBox="0 0 24 24" className="text-purple-800 md:w-6 md:h-6">
                       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
                     </svg>
                   )}
@@ -167,7 +170,7 @@ export default function SpaceNavigation({ activeSection, onSectionChange }: Spac
             </div>
           </div>
         </div>
-      </nav>      {/* Custom styles */}
+      </nav>
       <style>{`
         .font-funky {
           font-family: 'Comic Sans MS', cursive, sans-serif;
