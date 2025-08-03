@@ -17,7 +17,7 @@ export default function SpaceHero() {
       </div>
 
       {/* UFO with bomb - Top Left - Hidden on desktop to avoid nav overlap */}
-      <div className="absolute top-20 md:top-24 left-1 md:left-8 animate-wiggle block md:hidden">
+      <div className="absolute top-20 md:top-24 left-1 md:left-8 animate-wiggle">
         <div className="w-[100px] h-[130px] md:w-[150px] md:h-[200px]">
           <DotLottieReact
             src="https://lottie.host/6377263d-c4bb-47f7-a102-3bee449c3b58/Q8YL7KqiMx.lottie"
