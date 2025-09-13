@@ -5,6 +5,17 @@ export default function SpaceTimeline() {
   const timelineEvents = [
     {
       year: "2025",
+      title: "Pioneer & Lead Organizer, MetaMorph",
+      company: "MetaMorph",
+      location: "GNIT, Kolkata",
+      description:
+        "Started a new Hackathon community and culture with 3000+ registrations all over india",
+      image: "/metamorph.jpg",
+      type: "achievement",
+      color: "bg-blue-300",
+    },
+    {
+      year: "2025",
       title: "MSME Hackathon 4.0 Winner",
       company: "MSME",
       location: "Remote",
@@ -37,6 +48,18 @@ export default function SpaceTimeline() {
       color: "bg-yellow-300",
     },
     {
+      year: "2025",
+      title: "Diversion2k25 Hackathon",
+      company: "IEM",
+      location: "IEM Gurukul, Kolkata",
+      description:
+        "participated in Diversion2k25 Hackathon, building a AI powered Fitness platform with multiple LLM support.",
+      image: "/diversion.jpg",
+      type: "achievement",
+      color: "bg-blue-300",
+    },
+    
+    {
       year: "2024",
       title: "Started a Tech Community",
       company: "B2B",
@@ -57,6 +80,7 @@ export default function SpaceTimeline() {
       type: "work",
       color: "bg-pink-300",
     },
+    
     {
       year: "2022",
       title: "Computer Science Student",
