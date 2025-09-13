@@ -57,8 +57,7 @@ export default function SpaceTimeline() {
       image: "/diversion.jpg",
       type: "achievement",
       color: "bg-blue-300",
-    },
-    
+    }, 
     {
       year: "2024",
       title: "Started a Tech Community",
