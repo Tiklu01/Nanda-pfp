@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram} from 'lucide-react';
 import { useState } from 'react';
 
 interface FormData {
@@ -261,12 +261,34 @@ This message was sent from your portfolio contact form.
             <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl">
               <h4 className="text-xl md:text-2xl text-black dark:text-white mb-6 transform -rotate-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>Follow My Journey</h4>
               <div className="flex gap-4">
-                <a href="https://github.com/tiklu01" className="w-16 h-16 bg-black dark:bg-white border-4 border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-125 hover:rotate-12">
-                  <Github className="w-8 h-8 text-white dark:text-black" />
-                </a>
-                <a href="https://www.linkedin.com/in/nanda-das-7b2242243/" className="w-16 h-16 bg-blue-600 dark:bg-blue-500 border-4 border-blue-300 dark:border-blue-400 flex items-center justify-center hover:bg-blue-700 dark:hover:bg-blue-600 transition-all transform hover:scale-125 hover:rotate-12">
-                  <Linkedin className="w-8 h-8 text-white" />
-                </a>
+                <a 
+                    href="https://github.com/tiklu01" 
+                    className="w-16 h-16 bg-black dark:bg-white border-4 border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-125 hover:rotate-12"
+                  >
+                    <Github className="w-8 h-8 text-white dark:text-black" />
+                  </a>
+
+                  <a 
+                    href="https://www.linkedin.com/in/nanda-das-7b2242243/" 
+                    className="w-16 h-16 bg-[#0077B5] border-4 border-[#66b3ff] flex items-center justify-center hover:bg-[#005582] transition-all transform hover:scale-125 hover:rotate-12"
+                  >
+                    <Linkedin className="w-8 h-8 text-white" />
+                  </a>
+
+                  <a 
+                    href="https://x.com/Tikludas5" 
+                    className="w-16 h-16 bg-black border-4 border-gray-600 flex items-center justify-center hover:bg-gray-800 transition-all transform hover:scale-125 hover:rotate-12"
+                  >
+                    <Twitter className="w-8 h-8 text-white" />
+                  </a>
+
+                  <a 
+                    href="https://www.instagram.com/heavenly_demon_dx/" 
+                    className="w-16 h-16 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 border-4 border-pink-300 flex items-center justify-center hover:opacity-90 transition-all transform hover:scale-125 hover:rotate-12"
+                  >
+                    <Instagram className="w-8 h-8 text-white" />
+                  </a>
+                  
               </div>
             </div>
           </div>
