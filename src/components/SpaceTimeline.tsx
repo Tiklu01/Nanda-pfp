@@ -5,6 +5,17 @@ export default function SpaceTimeline() {
   const timelineEvents = [
     {
       year: "2025",
+      title: "Full Stack Engineer",
+      company: "Cyber Peak IT Solutions Pvt. Ltd.",
+      location: "Kolkata",
+      description:
+        "Fullstack & Production Engineer, working on web applications and cloud infrastructure.",
+      image: "/cyberpeak.jpeg",
+      type: "achievement",
+      color: "bg-blue-300",
+    },
+    {
+      year: "2025",
       title: "Pioneer & Lead Organizer, MetaMorph",
       company: "MetaMorph",
       location: "GNIT, Kolkata",
