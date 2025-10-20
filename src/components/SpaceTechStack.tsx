@@ -92,6 +92,10 @@ export default function SpaceTechStack() {
         {
           name: "Kubernetes",
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+        },
+        {
+          name: "NGINX",
+          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
         }
       ],
     },
