@@ -4,7 +4,7 @@ import { Calendar, MapPin, Award, Briefcase } from "lucide-react"
 export default function SpaceTimeline() {
   const timelineEvents = [
     {
-      year: "2025",
+      year: "Sep 2025 - Present",
       title: "Full Stack Engineer",
       company: "Cyber Peak IT Solutions Pvt. Ltd.",
       location: "Kolkata",
@@ -15,18 +15,18 @@ export default function SpaceTimeline() {
       color: "bg-blue-300",
     },
     {
-      year: "2025",
+      year: "Sep 2025",
       title: "Pioneer & Lead Organizer, MetaMorph",
       company: "MetaMorph",
       location: "GNIT, Kolkata",
       description:
-        "Started a new Hackathon community and culture with 3000+ registrations all over india",
+        "Started a new Hackathon community and culture with 3000+ registrations all over india with participants arriving from various states.",
       image: "/metamorph.jpg",
       type: "achievement",
       color: "bg-blue-300",
     },
     {
-      year: "2025",
+      year: "July 2025",
       title: "MSME Hackathon 4.0 Winner",
       company: "MSME",
       location: "Remote",
@@ -37,7 +37,7 @@ export default function SpaceTimeline() {
       color: "bg-blue-300",
     },
     {
-      year: "2025",
+      year: "June 2025",
       title: "HexaFalls Hackathon",
       company: "JIS",
       location: "JIS University, Kolkata",
@@ -48,7 +48,7 @@ export default function SpaceTimeline() {
       color: "bg-blue-300",
     },
     {
-      year: "2025",
+      year: "June 2025",
       title: "Hack{O}Lution Hackathon winner",
       company: "IEM",
       location: "IEM Ashram, Kolkata",
@@ -59,7 +59,7 @@ export default function SpaceTimeline() {
       color: "bg-yellow-300",
     },
     {
-      year: "2025",
+      year: "Feb 2025",
       title: "Diversion2k25 Hackathon",
       company: "IEM",
       location: "IEM Gurukul, Kolkata",
@@ -70,7 +70,7 @@ export default function SpaceTimeline() {
       color: "bg-blue-300",
     }, 
     {
-      year: "2024",
+      year: "Nov 2024",
       title: "Started a Tech Community",
       company: "B2B",
       location: "GNIT, Kolkata",
@@ -81,7 +81,7 @@ export default function SpaceTimeline() {
       color: "bg-green-300",
     },
     {
-      year: "2024",
+      year: "Nov 2024",
       title: "Techverse 3.0",
       company: "GNIT",
       location: "GNIT, Kolkata",
