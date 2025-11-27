@@ -88,14 +88,14 @@ export default function SpaceHero() {
           </p>
         </div>
 
-        <div className="relative">
-          <button className="bg-black dark:bg-white text-white dark:text-black hover:text-gray-300 dark:hover:text-gray-700 px-6 md:px-8 lg:px-12 py-3 md:py-4 lg:py-6 text-base md:text-lg lg:text-xl uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+        <div className="relative group">
+          <button className="bg-black dark:bg-white text-white dark:text-black hover:text-gray-300 dark:hover:text-gray-700 px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base md:text-lg uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             Nanda Lal Das
           </button>
 
           {/* Button decorations */}
-          <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-3 h-3 md:w-4 md:h-4 lg:w-6 lg:h-6 bg-yellow-400 rounded-full animate-bounce"></div>
-          <div className="absolute -bottom-1 -left-1 md:-bottom-2 md:-left-2 w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-red-400 rounded-full animate-pulse"></div>
+          <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-3 h-3 md:w-4 md:h-4 bg-yellow-400 rounded-full animate-bounce"></div>
+          <div className="absolute -bottom-1 -left-1 md:-bottom-2 md:-left-2 w-2 h-2 md:w-3 md:h-3 bg-red-400 rounded-full animate-pulse"></div>
         </div>
       </div>
 

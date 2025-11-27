@@ -1,8 +1,18 @@
 "use client"
+import { useState } from "react"
+import { PopupModal } from "react-calendly"
 
 export default function SpaceAbout() {
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false)
+
   return (
     <section className="py-12 md:py-20 bg-gradient-to-br from-pink-100 to-purple-100 dark:from-gray-800 dark:to-purple-900 relative overflow-hidden">
+      <PopupModal
+        url="https://calendly.com/tikludas01"
+        onModalClose={() => setIsCalendarOpen(false)}
+        open={isCalendarOpen}
+        rootElement={document.getElementById("root")!}
+      />
       {/* Floating elements with better mobile positioning */}
       <div className="absolute top-10 md:top-20 right-4 md:right-20 animate-wiggle">
         <svg width="50" height="50" viewBox="0 0 60 60" className="drop-shadow-lg md:w-[60px] md:h-[60px]">
@@ -69,7 +79,7 @@ export default function SpaceAbout() {
             </div>
           </div>
 
-          <div className="relative mt-8 lg:mt-0">
+          <div className="relative mt-8 lg:mt-0 flex flex-col items-center">
             {/* White oval container with your image inside */}
             <div className="relative w-full max-w-xs md:max-w-sm mx-auto">
               <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-4 md:p-6 transform rotate-2 hover:rotate-0 transition-transform shadow-xl animate-wiggle-gentle oval-container">
@@ -176,6 +186,18 @@ export default function SpaceAbout() {
                   />
                 </svg>
               </div>
+            </div>
+
+            {/* Schedule Meeting Button - Moved under image */}
+            <div className="mt-8 md:mt-12 relative z-20">
+              <button 
+                onClick={() => setIsCalendarOpen(true)}
+                className="bg-cyan-400 dark:bg-pink-500 text-black dark:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg uppercase tracking-wider hover:bg-cyan-300 dark:hover:bg-pink-400 transition-all transform hover:scale-105 hover:-rotate-1 border-4 border-black dark:border-white blob-1 shadow-xl flex items-center gap-3"
+                style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
+              >
+                <span className="text-xl">☕</span> 
+                <span>Let's Talk</span>
+              </button>
             </div>
           </div>
         </div>
