@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nanda.codes/sitemap.xml
