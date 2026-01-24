@@ -269,7 +269,7 @@ This message was sent from your portfolio contact form.
                   </a>
 
                   <a 
-                    href="https://www.linkedin.com/in/nanda-das-7b2242243/" 
+                    href="https://www.linkedin.com/in/nanda-das/" 
                     className="w-16 h-16 bg-[#0077B5] border-4 border-[#66b3ff] flex items-center justify-center hover:bg-[#005582] transition-all transform hover:scale-125 hover:rotate-12"
                   >
                     <Linkedin className="w-8 h-8 text-white" />

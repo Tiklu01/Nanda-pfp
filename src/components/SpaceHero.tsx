@@ -74,12 +74,12 @@ export default function SpaceHero() {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 py-12 md:py-20 flex flex-col items-center justify-center min-h-screen text-center">
         <div className="mb-8 md:mb-12">
-          <h1 className="font-funky text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black mb-2 md:mb-4 transform -rotate-2 text-shadow-fun blob-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <div className="font-funky text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black mb-2 md:mb-4 transform -rotate-2 text-shadow-fun blob-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             <span className="dark:text-white">EXPLORE</span>
-          </h1>
-          <h2 className="font-funky text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black transform rotate-1 text-shadow-fun blob-2" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          </div>
+          <div className="font-funky text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black transform rotate-1 text-shadow-fun blob-2" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             <span className="dark:text-white">THE SPACE</span>
-          </h2>
+          </div>
         </div>
 
         <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-4 md:p-6 lg:p-8 mb-6 md:mb-8 lg:mb-12 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 max-w-xl md:max-w-2xl mx-4">
@@ -89,9 +89,9 @@ export default function SpaceHero() {
         </div>
 
         <div className="relative group">
-          <button className="bg-black dark:bg-white text-white dark:text-black hover:text-gray-300 dark:hover:text-gray-700 px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base md:text-lg uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <h1 className="bg-black dark:bg-white text-white dark:text-black hover:text-gray-300 dark:hover:text-gray-700 px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base md:text-lg uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4 cursor-default" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
             Nanda Lal Das
-          </button>
+          </h1>
 
           {/* Button decorations */}
           <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-3 h-3 md:w-4 md:h-4 bg-yellow-400 rounded-full animate-bounce"></div>

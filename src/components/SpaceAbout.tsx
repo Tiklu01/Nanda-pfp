@@ -86,7 +86,7 @@ export default function SpaceAbout() {
                 <div className="relative overflow-hidden oval-image">
                   <img
                     src="https://res.cloudinary.com/dwt633pc6/image/upload/v1753080603/Nanda_h3wkqc.png"
-                    alt="Nanda Lal Das - Space Explorer Developer"
+                    alt="Nanda Lal Das | Full Stack Engineer & Web Developer"
                     className="w-full h-auto transform hover:scale-105 transition-transform duration-300"
                   />
                 </div>
