@@ -4,7 +4,18 @@ import { Calendar, MapPin, Award, Briefcase } from "lucide-react"
 export default function SpaceTimeline() {
   const timelineEvents = [
     {
-      year: "Sep 2025 - Present",
+      year: "4-5 April 2026",
+      title: "Mentor & Judge",
+      company: "Hacktropica 2.0",
+      location: "Asansol",
+      description:
+        "I served as a mentor at Hacktropica and later as a judge, as requested by MLH coaches.",
+      image: "/hacktropica.JPEG",
+      type: "achievement",
+      color: "bg-blue-300",
+    },
+    {
+      year: "Sep 2025 - Mar 2025",
       title: "Full Stack Engineer",
       company: "Cyber Peak IT Solutions Pvt. Ltd.",
       location: "Kolkata",
