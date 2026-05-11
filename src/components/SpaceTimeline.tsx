@@ -4,15 +4,26 @@ import { Calendar, MapPin, Award, Briefcase } from "lucide-react"
 export default function SpaceTimeline() {
   const timelineEvents = [
     {
+      year: "8-9 May 2026",
+      title: "Judge",
+      company: "HackOLution 2026",
+      location: "IEM Ashram",
+      description:
+        "Judged HackOLution 2k26 and mentored hackers with thier ideas.",
+      image: "/hackolution2k26.jpg",
+      type: "achievement",
+      color: "bg-orange-300",
+    },
+    {
       year: "4-5 April 2026",
       title: "Mentor & Judge",
       company: "Hacktropica 2.0",
       location: "Asansol",
       description:
-        "I served as a mentor at Hacktropica and later as a judge, as requested by MLH coaches.",
+        "I served as a mentor at Hacktropica and later as a judge.",
       image: "/hacktropica.JPEG",
       type: "achievement",
-      color: "bg-blue-300",
+      color: "bg-green-300",
     },
     {
       year: "Sep 2025 - Mar 2025",
@@ -34,7 +45,7 @@ export default function SpaceTimeline() {
         "Started a new Hackathon community and culture with 3000+ registrations all over india with participants arriving from various states.",
       image: "/metamorph.jpg",
       type: "achievement",
-      color: "bg-blue-300",
+      color: "bg-purple-600",
     },
     {
       year: "July 2025",
@@ -56,7 +67,7 @@ export default function SpaceTimeline() {
         "participated in HexaFalls Hackathon, building a healthcare app with specialised reminders.",
       image: "/hexafalls.jpeg",
       type: "achievement",
-      color: "bg-blue-300",
+      color: "bg-yellow-300",
     },
     {
       year: "June 2025",
@@ -67,7 +78,7 @@ export default function SpaceTimeline() {
         "Won one of the Tracks in Hack{O}Lution Hackathon, creating a RAG pipeline AI agent for tax savings.",
       image: "/hackolution.jpg",
       type: "achievement",
-      color: "bg-yellow-300",
+      color: "bg-green-500",
     },
     {
       year: "Feb 2025",
@@ -78,7 +89,7 @@ export default function SpaceTimeline() {
         "participated in Diversion2k25 Hackathon, building a AI powered Fitness platform with multiple LLM support.",
       image: "/diversion.jpg",
       type: "achievement",
-      color: "bg-blue-300",
+      color: "bg-orange-400",
     }, 
     {
       year: "Nov 2024",
