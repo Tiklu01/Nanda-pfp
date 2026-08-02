@@ -3,9 +3,9 @@ name: Vite CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -16,34 +16,32 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        
-    - name: Install Dependencies
-      run: npm ci
-      
-    - name: Run Linter
-      # Most Vite templates include a lint script. This runs it safely.
-      run: npm run lint --if-present
-      
-    - name: Build Project
-      # Compiles TypeScript (if used) and bundles the app via Vite
-      run: npm run build
-      
-    - name: Run Tests
-      # If you are using Vitest, ensure your package.json test script is set to 'vitest run' 
-      # so it executes once instead of hanging in watch mode.
-      run: npm test --if-present
+      - uses: actions/checkout@v4
 
-    - name: Upload Build Artifact
-      # Saves the Vite output folder ('dist') so it can be deployed or downloaded
-      uses: actions/upload-artifact@v4
-      with:
-        name: vite-build-node-${{ matrix.node-version }}
-        path: dist/
-        retention-days: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Linter
+        # Most Vite templates include a lint script. This runs it safely.
+        run: npm run lint --if-present
+
+      - name: Build Project
+        # Compiles TypeScript (if used) and bundles the app via Vite
+        run: npm run build
+
+      - name: Run Tests
+        run: npm test --if-present
+
+      - name: Upload Build Artifact
+        # Saves the Vite output folder ('dist') so it can be deployed or downloaded
+        uses: actions/upload-artifact@v4
+        with:
+          name: vite-build-node-${{ matrix.node-version }}
+          path: dist/
+          retention-days: 7
