@@ -31,11 +31,14 @@ jobs:
         # Most Vite templates include a lint script. This runs it safely.
         run: npm run lint --if-present
 
-      - name: Format App entrypoint
-        run: npx prettier --write src/App.tsx
-
       - name: Check Formatting
-        run: npm run format:check
+        run: npx prettier --check .
+
+      - name: Auto-format flagged files
+        if: failure()
+        run: |
+          npx prettier --write .
+          git status --short
 
       - name: Build Project
         # Compiles TypeScript (if used) and bundles the app via Vite
