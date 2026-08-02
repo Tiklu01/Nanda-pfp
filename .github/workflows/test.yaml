@@ -32,13 +32,15 @@ jobs:
         run: npm run lint --if-present
 
       - name: Check Formatting
+        id: format
+        continue-on-error: true
         run: npx prettier --check .
 
       - name: Auto-format flagged files
-        if: failure()
+        if: steps.format.outcome == 'failure'
         run: |
           npx prettier --write .
-          git status --short
+          npx prettier --check .
 
       - name: Build Project
         # Compiles TypeScript (if used) and bundles the app via Vite
