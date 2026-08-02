@@ -7,6 +7,10 @@ on:
   pull_request:
     branches: [main]
 
+# 1. ADDED: Grant the workflow permission to push commits to the repository
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,6 +21,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Required for the auto-commit action to push correctly on PRs or branches
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -44,9 +51,15 @@ jobs:
 
       - name: Auto-format flagged files
         if: steps.format.outcome == 'failure'
-        run: |
-          npx prettier --write .
-          npx prettier --check .
+        run: npx prettier --write .
+
+      # 2. ADDED: Commit and push the formatted files
+      - name: Commit auto-formatted files
+        # 3. ADDED: Only run this on ONE matrix job to prevent simultaneous git push conflicts
+        if: steps.format.outcome == 'failure' && matrix.node-version == '22.x'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: apply prettier auto-formatting"
 
       - name: Build Project
         # Compiles TypeScript (if used) and bundles the app via Vite
