@@ -31,6 +31,9 @@ jobs:
         # Most Vite templates include a lint script. This runs it safely.
         run: npm run lint --if-present
 
+      - name: Check Formatting
+        run: npm run format:check
+
       - name: Build Project
         # Compiles TypeScript (if used) and bundles the app via Vite
         run: npm run build

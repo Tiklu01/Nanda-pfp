@@ -18,9 +18,7 @@ describe("App", () => {
   it("renders the hero content", () => {
     render(<App />);
 
-    expect(
-      screen.getByRole("heading", { name: /nanda lal das/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /nanda lal das/i })).toBeInTheDocument();
     expect(screen.getByText(/the space/i)).toBeInTheDocument();
   });
 
@@ -60,8 +58,6 @@ describe("App", () => {
     const menuToggle = screen.getAllByRole("button")[0];
     await user.click(menuToggle);
 
-    expect(
-      screen.getAllByRole("button", { name: /home/i }).length,
-    ).toBeGreaterThan(1);
+    expect(screen.getAllByRole("button", { name: /home/i }).length).toBeGreaterThan(1);
   });
 });
