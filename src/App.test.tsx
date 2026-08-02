@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react'
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import App from "./App";
@@ -25,6 +25,7 @@ describe("App", () => {
   it("scrolls to the selected section when a navigation item is clicked", async () => {
     const user = userEvent.setup();
     const scrollIntoView = vi.fn();
+    
     Object.defineProperty(HTMLElement.prototype, "scrollIntoView", {
       configurable: true,
       value: scrollIntoView,
