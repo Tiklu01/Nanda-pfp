@@ -1,9 +1,9 @@
-"use client"
-import { useState } from "react"
-import { PopupModal } from "react-calendly"
+"use client";
+import { useState } from "react";
+import { PopupModal } from "react-calendly";
 
 export default function SpaceAbout() {
-  const [isCalendarOpen, setIsCalendarOpen] = useState(false)
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   return (
     <section className="py-12 md:py-20 bg-gradient-to-br from-pink-100 to-purple-100 dark:from-gray-800 dark:to-purple-900 relative overflow-hidden">
@@ -15,8 +15,21 @@ export default function SpaceAbout() {
       />
       {/* Floating elements with better mobile positioning */}
       <div className="absolute top-10 md:top-20 right-4 md:right-20 animate-wiggle">
-        <svg width="50" height="50" viewBox="0 0 60 60" className="drop-shadow-lg md:w-[60px] md:h-[60px]">
-          <circle cx="30" cy="30" r="25" fill="#ff69b4" stroke="#000" strokeWidth="3" className="blob-1" />
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 60 60"
+          className="drop-shadow-lg md:w-[60px] md:h-[60px]"
+        >
+          <circle
+            cx="30"
+            cy="30"
+            r="25"
+            fill="#ff69b4"
+            stroke="#000"
+            strokeWidth="3"
+            className="blob-1"
+          />
           <circle cx="22" cy="22" r="6" fill="#000" />
           <circle cx="38" cy="22" r="6" fill="#000" />
           <circle cx="22" cy="20" r="2" fill="#fff" />
@@ -40,42 +53,49 @@ export default function SpaceAbout() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
-            <h2 className="font-funky text-4xl md:text-7xl text-black dark:text-white mb-6 md:mb-8 transform -rotate-2 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+            <h2
+              className="font-funky text-4xl md:text-7xl text-black dark:text-white mb-6 md:mb-8 transform -rotate-2 text-shadow-fun"
+              style={{ fontWeight: "900", fontFamily: "Bungee, Arial Black, sans-serif" }}
+            >
               ABOUT THE
               <br />
               <span className="transform rotate-1 inline-block">EXPLORER</span>
             </h2>
             <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-6 md:p-8 mb-6 md:mb-8 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 animate-float-gentle">
               <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed font-bold">
-               I&apos;m a full-stack developer who loves building simple, user-friendly web apps. I won the MSME Hackathon 4.0 for creative tech solutions. Beyond code, I enjoy music, gaming, and picking up new skills just for fun.
+                I&apos;m a full-stack developer who loves building simple, user-friendly web apps. I
+                won the MSME Hackathon 4.0 for creative tech solutions. Beyond code, I enjoy music,
+                gaming, and picking up new skills just for fun.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-6 md:p-8 mb-6 md:mb-8 transform -rotate-1 hover:rotate-0 transition-transform shadow-xl blob-4 animate-float-gentle-delay">
               <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed font-bold">
-                My mission is to bridge the gap between design and technology, creating solutions that are both
-                beautiful and functional. Every project is an opportunity to explore new territories in the digital
-                cosmos!
+                My mission is to bridge the gap between design and technology, creating solutions
+                that are both beautiful and functional. Every project is an opportunity to explore
+                new territories in the digital cosmos!
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4">
-              {["NextJs", "TypeScript", "Node.js", "Python", "FastApi", "Docker"].map((tech, index) => (
-                <span
-                  key={tech}
-                  className={`px-4 md:px-6 py-2 md:py-3 border-4 border-black font-black text-sm md:text-lg uppercase tracking-wider transform hover:scale-110 transition-all blob-${(index % 4) + 1} animate-jiggle tech-bounce-${(index % 3) + 1} ${
-                    index % 4 === 0
-                      ? "bg-yellow-300 rotate-2"
-                      : index % 4 === 1
-                        ? "bg-pink-300 -rotate-1"
-                        : index % 4 === 2
-                          ? "bg-blue-300 rotate-1"
-                          : "bg-green-300 -rotate-2"
-                  }`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  {tech}
-                </span>
-              ))}
+              {["NextJs", "TypeScript", "Node.js", "Python", "FastApi", "Docker"].map(
+                (tech, index) => (
+                  <span
+                    key={tech}
+                    className={`px-4 md:px-6 py-2 md:py-3 border-4 border-black font-black text-sm md:text-lg uppercase tracking-wider transform hover:scale-110 transition-all blob-${(index % 4) + 1} animate-jiggle tech-bounce-${(index % 3) + 1} ${
+                      index % 4 === 0
+                        ? "bg-yellow-300 rotate-2"
+                        : index % 4 === 1
+                          ? "bg-pink-300 -rotate-1"
+                          : index % 4 === 2
+                            ? "bg-blue-300 rotate-1"
+                            : "bg-green-300 -rotate-2"
+                    }`}
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    {tech}
+                  </span>
+                ),
+              )}
             </div>
           </div>
 
@@ -190,12 +210,12 @@ export default function SpaceAbout() {
 
             {/* Schedule Meeting Button - Moved under image */}
             <div className="mt-8 md:mt-12 relative z-20">
-              <button 
+              <button
                 onClick={() => setIsCalendarOpen(true)}
                 className="bg-cyan-400 dark:bg-pink-500 text-black dark:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg uppercase tracking-wider hover:bg-cyan-300 dark:hover:bg-pink-400 transition-all transform hover:scale-105 hover:-rotate-1 border-4 border-black dark:border-white blob-1 shadow-xl flex items-center gap-3"
-                style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}
+                style={{ fontWeight: "900", fontFamily: "Bungee, Arial Black, sans-serif" }}
               >
-                <span className="text-xl">☕</span> 
+                <span className="text-xl">☕</span>
                 <span>Let's Talk</span>
               </button>
             </div>
@@ -341,5 +361,5 @@ export default function SpaceAbout() {
         .blob-4 { animation: blob-alt-reverse 9s ease-in-out infinite; }
       `}</style>
     </section>
-  )
+  );
 }

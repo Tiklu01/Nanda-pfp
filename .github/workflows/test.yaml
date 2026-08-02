@@ -1,0 +1,77 @@
+# This workflow will do a clean installation of node dependencies, lint, build the Vite project, and run tests.
+name: Vite CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# 1. ADDED: Grant the workflow permission to push commits to the repository
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Required for the auto-commit action to push correctly on PRs or branches
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Security Audit
+        id: audit
+        continue-on-error: true
+        # Reports vulnerabilities without stopping the pipeline.
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Run Linter
+        # Most Vite templates include a lint script. This runs it safely.
+        run: npm run lint --if-present
+
+      - name: Check Formatting
+        id: format
+        continue-on-error: true
+        run: npx prettier --check .
+
+      - name: Auto-format flagged files
+        if: steps.format.outcome == 'failure'
+        run: npx prettier --write .
+
+      # 2. ADDED: Commit and push the formatted files
+      - name: Commit auto-formatted files
+        # 3. ADDED: Only run this on ONE matrix job to prevent simultaneous git push conflicts
+        if: steps.format.outcome == 'failure' && matrix.node-version == '22.x'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: apply prettier auto-formatting"
+
+      - name: Build Project
+        # Compiles TypeScript (if used) and bundles the app via Vite
+        run: npm run build
+
+      - name: Run Tests
+        run: npm test --if-present
+
+      - name: Upload Build Artifact
+        # Saves the Vite output folder ('dist') so it can be deployed or downloaded
+        uses: actions/upload-artifact@v4
+        with:
+          name: vite-build-node-${{ matrix.node-version }}
+          path: dist/
+          retention-days: 7
