@@ -1,5 +1,5 @@
-"use client"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"
+"use client";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function SpaceHero() {
   return (
@@ -65,7 +65,11 @@ export default function SpaceHero() {
             }}
           >
             <svg width="15" height="15" viewBox="0 0 15 15" className="blob-1 md:w-5 md:h-5">
-              <polygon points="7.5,1 9,5 13,5 10,8 11.5,12 7.5,10 3.5,12 5,8 2,5 6,5" fill="#000" opacity="0.4" />
+              <polygon
+                points="7.5,1 9,5 13,5 10,8 11.5,12 7.5,10 3.5,12 5,8 2,5 6,5"
+                fill="#000"
+                opacity="0.4"
+              />
             </svg>
           </div>
         ))}
@@ -74,22 +78,32 @@ export default function SpaceHero() {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 py-12 md:py-20 flex flex-col items-center justify-center min-h-screen text-center">
         <div className="mb-8 md:mb-12">
-          <div className="font-funky text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black mb-2 md:mb-4 transform -rotate-2 text-shadow-fun blob-1" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <div
+            className="font-funky text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-black mb-2 md:mb-4 transform -rotate-2 text-shadow-fun blob-1"
+            style={{ fontWeight: "900", fontFamily: "Bungee, Arial Black, sans-serif" }}
+          >
             <span className="dark:text-white">EXPLORE</span>
           </div>
-          <div className="font-funky text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black transform rotate-1 text-shadow-fun blob-2" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <div
+            className="font-funky text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black transform rotate-1 text-shadow-fun blob-2"
+            style={{ fontWeight: "900", fontFamily: "Bungee, Arial Black, sans-serif" }}
+          >
             <span className="dark:text-white">THE SPACE</span>
           </div>
         </div>
 
         <div className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-4 md:p-6 lg:p-8 mb-6 md:mb-8 lg:mb-12 transform rotate-1 hover:rotate-0 transition-transform shadow-xl blob-3 max-w-xl md:max-w-2xl mx-4">
           <p className="text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-200 font-bold leading-relaxed">
-            You don&apos;t need a PhD to win in life — just curiosity, code, and a little rebellion. Let&apos;s make the World weird, useful, and maybe even profitable together!
+            You don&apos;t need a PhD to win in life — just curiosity, code, and a little rebellion.
+            Let&apos;s make the World weird, useful, and maybe even profitable together!
           </p>
         </div>
 
         <div className="relative group">
-          <h1 className="bg-black dark:bg-white text-white dark:text-black hover:text-gray-300 dark:hover:text-gray-700 px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base md:text-lg uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4 cursor-default" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <h1
+            className="bg-black dark:bg-white text-white dark:text-black hover:text-gray-300 dark:hover:text-gray-700 px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base md:text-lg uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105 hover:rotate-2 btn-funky border-4 border-black dark:border-white blob-4 cursor-default"
+            style={{ fontWeight: "900", fontFamily: "Bungee, Arial Black, sans-serif" }}
+          >
             Nanda Lal Das
           </h1>
 
@@ -171,5 +185,5 @@ export default function SpaceHero() {
         }
       `}</style>
     </section>
-  )
+  );
 }

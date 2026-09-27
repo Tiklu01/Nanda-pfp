@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 export default function TechStack() {
   const techCategories = [
@@ -13,7 +13,8 @@ export default function TechStack() {
         {
           name: "TypeScript",
           color: "from-blue-400 to-blue-600",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
         },
         {
           name: "Next.js",
@@ -23,7 +24,8 @@ export default function TechStack() {
         {
           name: "Tailwind CSS",
           color: "from-teal-400 to-cyan-500",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
         },
       ],
     },
@@ -43,7 +45,8 @@ export default function TechStack() {
         {
           name: "PostgreSQL",
           color: "from-blue-400 to-indigo-500",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
         },
         {
           name: "MongoDB",
@@ -58,7 +61,8 @@ export default function TechStack() {
         {
           name: "AWS",
           color: "from-orange-400 to-orange-600",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
         },
         {
           name: "Docker",
@@ -68,7 +72,8 @@ export default function TechStack() {
         {
           name: "Kubernetes",
           color: "from-blue-400 to-purple-500",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
         },
         {
           name: "CI/CD",
@@ -102,20 +107,24 @@ export default function TechStack() {
         },
       ],
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Tech Stack</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Technologies and tools I use to bring ideas to life</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Technologies and tools I use to bring ideas to life
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {techCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">{category.title}</h3>
+              <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">
+                {category.title}
+              </h3>
 
               <div className="space-y-4">
                 {category.technologies.map((tech, techIndex) => (
@@ -133,7 +142,7 @@ export default function TechStack() {
                           alt={`${tech.name} icon`}
                           className="w-full h-full object-contain"
                           onError={(e) => {
-                            e.currentTarget.src = "/placeholder.svg?height=32&width=32"
+                            e.currentTarget.src = "/placeholder.svg?height=32&width=32";
                           }}
                         />
                       </div>
@@ -234,5 +243,5 @@ export default function TechStack() {
         }
       `}</style>
     </section>
-  )
+  );
 }

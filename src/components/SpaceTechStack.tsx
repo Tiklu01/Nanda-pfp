@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 export default function SpaceTechStack() {
   const techCategories = [
@@ -19,7 +19,8 @@ export default function SpaceTechStack() {
         },
         {
           name: "Tailwind CSS",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
         },
       ],
     },
@@ -38,7 +39,7 @@ export default function SpaceTechStack() {
           name: "Express",
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
         },
-         {
+        {
           name: "Next.js",
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
         },
@@ -49,11 +50,13 @@ export default function SpaceTechStack() {
       technologies: [
         {
           name: "JavaScript",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
         },
         {
           name: "TypeScript",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
         },
         {
           name: "Python",
@@ -61,7 +64,8 @@ export default function SpaceTechStack() {
         },
         {
           name: "C++",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
         },
         {
           name: "Java",
@@ -74,7 +78,8 @@ export default function SpaceTechStack() {
       technologies: [
         {
           name: "PostgreSQL",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
         },
         {
           name: "MongoDB",
@@ -91,12 +96,13 @@ export default function SpaceTechStack() {
         },
         {
           name: "Kubernetes",
-          image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
         },
         {
           name: "NGINX",
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
-        }
+        },
       ],
     },
     {
@@ -116,29 +122,37 @@ export default function SpaceTechStack() {
         },
       ],
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-gradient-to-br from-green-100 to-blue-100 dark:from-gray-900 dark:to-green-900 relative overflow-hidden">
       {/* Floating decorations */}
       <div className="absolute top-20 right-20 animate-orbit">
         <svg width="60" height="60" viewBox="0 0 60 60">
-          <polygon points="30,5 35,20 50,20 38,30 43,45 30,37 17,45 22,30 10,20 25,20" fill="#ffff00" stroke="#000" strokeWidth="3"/>
+          <polygon
+            points="30,5 35,20 50,20 38,30 43,45 30,37 17,45 22,30 10,20 25,20"
+            fill="#ffff00"
+            stroke="#000"
+            strokeWidth="3"
+          />
         </svg>
       </div>
 
       <div className="absolute bottom-20 left-20 animate-drift">
         <svg width="50" height="50" viewBox="0 0 50 50">
-          <circle cx="25" cy="25" r="20" fill="#ff6b6b" stroke="#000" strokeWidth="3"/>
-          <circle cx="20" cy="20" r="3" fill="#000"/>
-          <circle cx="30" cy="20" r="3" fill="#000"/>
-          <path d="M 15 30 Q 25 40 35 30" stroke="#000" strokeWidth="2" fill="none"/>
+          <circle cx="25" cy="25" r="20" fill="#ff6b6b" stroke="#000" strokeWidth="3" />
+          <circle cx="20" cy="20" r="3" fill="#000" />
+          <circle cx="30" cy="20" r="3" fill="#000" />
+          <path d="M 15 30 Q 25 40 35 30" stroke="#000" strokeWidth="2" fill="none" />
         </svg>
       </div>
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-funky text-4xl md:text-7xl text-black dark:text-white mb-8 transform -rotate-1 text-shadow-fun" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+          <h2
+            className="font-funky text-4xl md:text-7xl text-black dark:text-white mb-8 transform -rotate-1 text-shadow-fun"
+            style={{ fontWeight: "900", fontFamily: "Bungee, Arial Black, sans-serif" }}
+          >
             TECH ARSENAL
           </h2>
           <p className="text-2xl text-gray-700 dark:text-gray-200 max-w-3xl mx-auto font-bold">
@@ -148,8 +162,14 @@ export default function SpaceTechStack() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {techCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-6 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-              <h3 className="font-funky text-xl md:text-2xl text-black dark:text-white text-center mb-6 pb-4 border-b-2 border-black dark:border-white" style={{fontWeight: '900', fontFamily: 'Bungee, Arial Black, sans-serif'}}>
+            <div
+              key={categoryIndex}
+              className="bg-white dark:bg-gray-800 border-4 border-black dark:border-white p-6 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+            >
+              <h3
+                className="font-funky text-xl md:text-2xl text-black dark:text-white text-center mb-6 pb-4 border-b-2 border-black dark:border-white"
+                style={{ fontWeight: "900", fontFamily: "Bungee, Arial Black, sans-serif" }}
+              >
                 {category.title}
               </h3>
 
@@ -166,7 +186,7 @@ export default function SpaceTechStack() {
                         className="w-full h-full object-contain"
                         onError={(e) => {
                           if (!e.currentTarget.dataset.fallback) {
-                            e.currentTarget.dataset.fallback = 'true';
+                            e.currentTarget.dataset.fallback = "true";
                             e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`
                               <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="48" height="48" fill="#6366f1" rx="8"/>
@@ -219,5 +239,5 @@ export default function SpaceTechStack() {
         }
       `}</style>
     </section>
-  )
+  );
 }
