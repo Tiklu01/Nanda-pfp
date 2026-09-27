@@ -91,6 +91,11 @@ export default function SpaceTechStack() {
       title: "Cloud & DevOps",
       technologies: [
         {
+          name: "AWS",
+          color: "from-orange-400 to-orange-600",
+          image: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+        },
+        {
           name: "Docker",
           image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
         },
